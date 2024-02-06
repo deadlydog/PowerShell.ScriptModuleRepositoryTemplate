@@ -17,7 +17,7 @@ Addresses issue #ISSUE_NUMBER (if applicable)
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 
-### Describe the change
+### Describe the change in more detail
 
 What is the motivation for this change? What does it do? What problem does it solve?
 

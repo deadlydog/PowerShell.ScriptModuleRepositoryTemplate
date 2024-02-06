@@ -24,17 +24,23 @@ Steps to reproduce the behavior:
 
 A clear and concise description of what you expected to happen.
 
+### Logs or error messages
+
+Any error messages or logs that might help us understand the problem.
+
 ### Screenshots
 
-If applicable, add screenshots or video to help explain your problem.
+If applicable, add screenshots or video to help explain the problem.
 
 ### System information
 
+Information about the system you are using where the bug occurred.
+
 - Device: (e.g. PC, iPhone6)
-- OS: (e.g. Windows 10, iOS)
-- Browser (e.g. Chrome, Safari)
-- Version (e.g. 22)
+- OS and version: (e.g. Windows 10, iOS 12.3.1)
+- Browser and version: (e.g. Chrome 121.0.6167.140, Safari 12.1.2)
+- Application version: (e.g. 1.0.6)
 
-### Additional context
+### Additional information
 
-Add any other context or information about the problem here.
+Add any other context or information about the problem or how to reproduce it.
