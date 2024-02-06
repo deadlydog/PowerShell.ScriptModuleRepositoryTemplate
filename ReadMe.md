@@ -7,7 +7,7 @@ A template repository to create new PowerShell modules from quickly with boilerp
 Use this template to create a new repository for your PowerShell module.
 Follow the instructions below to get started.
 
-### 📝 Create a new repo from this template
+### 🗍 Create a new repo from this template
 
 The official docs for creating a new repository from a template can [be found here](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 In short, the steps are:
@@ -16,7 +16,7 @@ In short, the steps are:
 1. Name your new repository and give it a description.
 1. Click `Create repository`.
 
-### 📦 Add your module
+### ➕ Add your module
 
 You should now have this repository in your account with the name you chose.
 
@@ -28,7 +28,38 @@ You should now have this repository in your account with the name you chose.
    1. If you have not written the module yet:
       1. Rename the `YourModule.psm1` and `YourModule.psd1` files in the `src` directory to match your module name.
 
-### 💳 Donate
+### 🚚 Update your CI/CD workflows
+
+This template includes CI/CD workflows for publishing the PowerShell module using both GitHub Actions and Azure DevOps Pipelines.
+Follow the instructions for the CI/CD system you plan to use.
+
+#### 🐙🐱 GitHub Actions
+
+If using GitHub Actions for your CI/CD workflows, perform the following steps:
+
+#### ♻️ Azure DevOps Pipelines
+
+If using Azure DevOps Pipelines for your CI/CD pipelines, perform the following steps:
+
+### 📃 Update boilerplate repo files
+
+The following boilerplate git repository files should be updated, or removed.
+
+Will require changes:
+
+- [License](/License.md): Update the license to match your module's license, and use your name or organization name.
+- [CODEOWNERS](/.github/CODEOWNERS): Update the CODEOWNERS file to match your module's maintainers, or remove this file.
+- [FUNDING](/.github/FUNDING.yml): Update the FUNDING.yml file to match your module's donation information, or remove this file.
+- [ReadMe](/ReadMe.md): Update the ReadMe with your module's information.
+
+May require changes:
+
+- [ChangeLog](/Changelog.md): If you don't plan to track a changelog, remove this file and it's reference from the ReadMe.
+- [Contributing](/docs/Contributing.md): Update the contributing guidelines to match your module's contributing guidelines, or remove it.
+- [Architectural Decision Records](/docs/ArchitectureDecisionRecords/): Remove this directory if you don't plan to use ADRs, and it's reference from the Contributing page.
+- [bug_report](/.github/ISSUE_TEMPLATE/bug_report.md), [feature_request](/.github/ISSUE_TEMPLATE/feature_request.md), [pull_request_template](/.github/pull_request_template.md): Update the bug report, feature request, and pull request templates as needed to meet your requirements, or remove them.
+
+### ❤ Donate
 
 Buy me a hot apple cider for providing this template open source and for free 🙂
 
