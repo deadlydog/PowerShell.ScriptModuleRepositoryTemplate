@@ -24,10 +24,10 @@ Clone it to your local machine to start making changes to it.
 1. Add your module to the `src` directory.
    1. If you already have a module written:
       1. Add the `.psm1` and `.psd1` files directly to the `src` directory.
-      1. Delete the `YourModule.psm1` and `YourModule.psd1` files from the `src` directory.
+      1. Delete the `YourModuleName.psm1` and `YourModuleName.psd1` files from the `src` directory.
    1. If you have not written the module yet:
-      1. Rename the `YourModule.psm1` and `YourModule.psd1` files in the `src` directory to match your module name.
-1. Perform a find-and-replace across the entire repository to replace `YourModule` with your module's name (no spaces).
+      1. Rename the `YourModuleName.psm1` and `YourModuleName.psd1` files in the `src` directory to match your module name.
+1. Perform a find-and-replace across the entire repository to replace `YourModuleName` with your module's name (no spaces).
 1. Search for `UPDATE ME` in the repository and update the file accordingly.
 
 ### 🤖 Update your CI/CD workflows
