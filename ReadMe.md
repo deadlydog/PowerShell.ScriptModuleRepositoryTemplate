@@ -1,6 +1,6 @@
 # Template PowerShell Script Module Repository
 
-A template repository to create new PowerShell modules from quickly with boilerplate code and CI/CD workflows already defined.
+A template repository to create new PowerShell modules quickly with boilerplate code and CI/CD workflows already defined.
 
 ## 📄 Template setup instructions
 
@@ -16,21 +16,23 @@ In short, the steps are:
 1. Name your new repository and give it a description.
 1. Click `Create repository`.
 
+You should now have this repository in your account with the name you chose.
+Clone it to your local machine to start making changes to it.
+
 ### ➕ Add your module
 
-You should now have this repository in your account with the name you chose.
-
-1. Clone your new repository to your local machine.
 1. Add your module to the `src` directory.
    1. If you already have a module written:
       1. Add the `.psm1` and `.psd1` files directly to the `src` directory.
       1. Delete the `YourModule.psm1` and `YourModule.psd1` files from the `src` directory.
    1. If you have not written the module yet:
       1. Rename the `YourModule.psm1` and `YourModule.psd1` files in the `src` directory to match your module name.
+1. Perform a find-and-replace across the entire repository to replace `YourModule` with your module's name (no spaces).
+1. Search for `UPDATE ME` in the repository and update the file accordingly.
 
-### 🚚 Update your CI/CD workflows
+### 🤖 Update your CI/CD workflows
 
-This template includes CI/CD workflows for publishing the PowerShell module using both GitHub Actions and Azure DevOps Pipelines.
+This template includes CI/CD workflows for building and publishing the PowerShell module using both GitHub Actions and Azure DevOps Pipelines.
 Follow the instructions for the CI/CD system you plan to use.
 
 #### 🐙🐱 GitHub Actions
