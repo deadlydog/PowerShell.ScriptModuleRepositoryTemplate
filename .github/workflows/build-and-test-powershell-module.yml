@@ -7,13 +7,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab.
   workflow_dispatch:
 
+  # Allows the deployment workflow to call this workflow.
   workflow_call:
-    inputs:
-      versionNumber:
-        description: 'The version number to use for the module. This should be in the format of "Major.Minor.Patch". e.g. "1.0.0". Future builds will increment from this version number. This input is optional. If not provided, the previous version numbers Patch will be incremented.'
-        required: false
-        type: string
-        default: ''
+    # Outputs required by the deployment workflow.
     outputs:
       powerShellModuleName:
         description: 'The name of the PowerShell module being built.'
@@ -29,8 +25,8 @@ on:
         value: ${{ jobs.build-and-test.outputs.deployFilesArtifactName }}
 
 env:
-  powerShellModuleName: 'tiPS'
-  powerShellModuleDirectoryPath: './src/tiPS'
+  powerShellModuleName: 'YourModuleName'
+  powerShellModuleDirectoryPath: './src/YourModuleName'
   deployFilesDirectoryPath: './deploy'
   prereleaseModuleArtifactName: 'PrereleaseModuleArtifact'
   prereleaseModuleArtifactDirectoryPath: './artifacts/Prerelease'
@@ -38,11 +34,10 @@ env:
   stableModuleArtifactDirectoryPath: './artifacts/Stable'
   deployFilesArtifactName: 'DeployFilesArtifact'
   deployFilesArtifactDirectoryPath: './artifacts/deploy'
-  ciVersionTagPrefix: 'ci-version-'
 
 jobs:
   build-and-test:
-    runs-on: windows-latest # Use Windows agent to ensure dotnet.exe is available to build C# assemblies.
+    runs-on: windows-latest # Use Windows agent to ensure dotnet.exe is available to build C# assemblies, if required.
     outputs:
       powerShellModuleName: ${{ env.powerShellModuleName }}
       prereleaseModuleArtifactName: ${{ env.prereleaseModuleArtifactName }}
@@ -58,14 +53,6 @@ jobs:
       - name: Display PowerShell version being used
         shell: pwsh
         run: $PSVersionTable
-
-      - name: Build the C# assemblies
-        shell: pwsh
-        run: ./build/Build-CSharpAssemblies.ps1 -Force
-
-      - name: Generate PowerShellTips.json file
-        shell: pwsh
-        run: ./build/Convert-PowerShellTipFilesToJsonFile.ps1
 
       - name: Run PowerShell linter with PSScriptAnalyzer
         shell: pwsh
@@ -103,26 +90,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           min-coverage-overall: 60
           min-coverage-changed-files: 60
-
-      - name: Build the concatenated psm1 file
-        shell: pwsh
-        run: ./build/Build-Psm1File.ps1 -DeleteSourceFilesAfterImport
-
-      - name: Run Pester tests again to ensure the concatenated psm1 file works as expected
-        shell: pwsh
-        run: |
-          Write-Output "Pester version being used:"
-          Import-Module -Name Pester
-          Get-Module -Name Pester
-
-          Write-Output "Running all Pester tests in the repo:"
-          $pesterConfig = New-PesterConfiguration @{
-            Output = @{ Verbosity = 'Detailed' }
-            Run = @{ Throw = $true }
-            TestResult = @{ Enabled = $false }
-            CodeCoverage = @{ Enabled = $false }
-          }
-          Invoke-Pester -Configuration $pesterConfig
 
       - name: Determine new version from Git tag and set environment variables
         shell: pwsh
