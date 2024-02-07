@@ -19,16 +19,36 @@ In short, the steps are:
 You should now have this repository in your account with the name you chose.
 Clone it to your local machine to start making changes to it.
 
+### 🤖 Replace repo template information
+
+Run the [TODO](/TODO.ps1) script to update the repository files with your module's information.
+You will be prompted to enter the following information:
+
+- Your modules's name (no spaces)
+- Your name or organization name (may contain spaces)
+
+The script will perform a find-and-replace across the entire repository to update the appropriate files with the information you provide.
+The script performs the following actions:
+
+- Replaces `YourModuleName` with your module's name.
+- Replaces `YourNameOrOrganizationNameHere` with your name or organization name.
+- Updates the PowerShell module manifest's `GUID` property with a new unique GUID.
+
+For information that can not be updated automatically, perform the following actions after running the above script:
+
+1. Search for `UPDATE ME` in the repository and update the file accordingly.
+
 ### ➕ Add your module
 
-1. Add your module to the `src` directory.
+If you already have a module written, add the module's `.psm1` and `.psd1` files to the `src` directory, replacing the existing files.
+
+<!-- 1. Add your module to the `src` directory.
    1. If you already have a module written:
       1. Add the `.psm1` and `.psd1` files directly to the `src` directory.
       1. Delete the `YourModuleName.psm1` and `YourModuleName.psd1` files from the `src` directory.
    1. If you have not written the module yet:
       1. Rename the `YourModuleName.psm1` and `YourModuleName.psd1` files in the `src` directory to match your module name.
-1. Perform a find-and-replace across the entire repository to replace `YourModuleName` with your module's name (no spaces).
-1. Search for `UPDATE ME` in the repository and update the file accordingly.
+1. Perform a find-and-replace across the entire repository to replace `YourModuleName` with your module's name (no spaces). -->
 
 ### 🤖 Update your CI/CD workflows
 
@@ -45,17 +65,18 @@ If using Azure DevOps Pipelines for your CI/CD pipelines, perform the following 
 
 ### ✔ Update boilerplate repo files
 
-The following boilerplate git repository files should be updated, or removed.
+The following boilerplate git repository files should be reviewed and updated or removed.
 
 Will require changes:
 
-- [License](/License.md): Update the license to match your module's license, and use your name or organization name.
+- [License](/License.md): Update the license to match your module's license, and ensure it uses the correct name in the copyright.
 - [CODEOWNERS](/.github/CODEOWNERS): Update the CODEOWNERS file to match your module's maintainers, or remove this file.
 - [FUNDING](/.github/FUNDING.yml): Update the FUNDING.yml file to match your module's donation information, or remove this file.
 - [ReadMe](/ReadMe.md): Update the ReadMe with your module's information.
 
 May require changes:
 
+- Module manifest: Update the module manifest (the `.psd1` file in the `src` directory) with your module's information.
 - [ChangeLog](/Changelog.md): If you don't plan to track a changelog, remove this file and it's reference from the ReadMe.
 - [Contributing](/docs/Contributing.md): Update the contributing guidelines to match your module's contributing guidelines, or remove it.
 - [Architectural Decision Records](/docs/ArchitectureDecisionRecords/): Remove this directory if you don't plan to use ADRs, and it's reference from the Contributing page.
