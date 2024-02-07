@@ -2,7 +2,7 @@
 
 A template repository to create new PowerShell modules from quickly with boilerplate code and CI/CD workflows already defined.
 
-## Template setup instructions
+## 📄 Template setup instructions
 
 Use this template to create a new repository for your PowerShell module.
 Follow the instructions below to get started.
@@ -41,7 +41,7 @@ If using GitHub Actions for your CI/CD workflows, perform the following steps:
 
 If using Azure DevOps Pipelines for your CI/CD pipelines, perform the following steps:
 
-### 📃 Update boilerplate repo files
+### ✔ Update boilerplate repo files
 
 The following boilerplate git repository files should be updated, or removed.
 
@@ -59,7 +59,7 @@ May require changes:
 - [Architectural Decision Records](/docs/ArchitectureDecisionRecords/): Remove this directory if you don't plan to use ADRs, and it's reference from the Contributing page.
 - [bug_report](/.github/ISSUE_TEMPLATE/bug_report.md), [feature_request](/.github/ISSUE_TEMPLATE/feature_request.md), [pull_request_template](/.github/pull_request_template.md): Update the bug report, feature request, and pull request templates as needed to meet your requirements, or remove them.
 
-### ❤ Donate
+### ❤ Donate to support this template
 
 Buy me a hot apple cider for providing this template open source and for free 🙂
 
