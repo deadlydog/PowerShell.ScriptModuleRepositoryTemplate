@@ -69,16 +69,16 @@ The following boilerplate git repository files should be reviewed and updated or
 
 Will require changes:
 
-- [License](/License.md): Update the license to match your module's license, and ensure it uses the correct name in the copyright.
-- [CODEOWNERS](/.github/CODEOWNERS): Update the CODEOWNERS file to match your module's maintainers, or remove this file.
-- [FUNDING](/.github/FUNDING.yml): Update the FUNDING.yml file to match your module's donation information, or remove this file.
-- [ReadMe](/ReadMe.md): Update the ReadMe with your module's information.
+- [License](/License.md): Update to match your module's license, and ensure it uses the correct name in the copyright.
+- [CODEOWNERS](/.github/CODEOWNERS): Update to match your module's maintainers, or remove this file.
+- [FUNDING](/.github/FUNDING.yml): Update to match your module's donation information, or remove this file.
+- [ReadMe](/ReadMe.md): Update with your module's information.
 
 May require changes:
 
 - Module manifest: Update the module manifest (the `.psd1` file in the `src` directory) with your module's information.
 - [Changelog](/Changelog.md): If you don't plan to track a changelog, remove this file and it's reference from the ReadMe.
-- [Contributing](/docs/Contributing.md): Update the contributing guidelines to match your module's contributing guidelines, or remove it.
+- [Contributing](/docs/Contributing.md): Update to match your module's contributing guidelines, or remove it.
 - [Architectural Decision Records](/docs/ArchitectureDecisionRecords/): Remove this directory if you don't plan to use ADRs, and it's reference from the Contributing page.
 - [bug_report](/.github/ISSUE_TEMPLATE/bug_report.md), [feature_request](/.github/ISSUE_TEMPLATE/feature_request.md), [pull_request_template](/.github/pull_request_template.md): Update the bug report, feature request, and pull request templates as needed to meet your requirements, or remove them.
 - Build and deployment workflows: The workflows include extra steps that you may not want, such as spell check, code coverage, etc.
