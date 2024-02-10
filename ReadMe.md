@@ -77,7 +77,7 @@ Will require changes:
 May require changes:
 
 - Module manifest: Update the module manifest (the `.psd1` file in the `src` directory) with your module's information.
-- [ChangeLog](/Changelog.md): If you don't plan to track a changelog, remove this file and it's reference from the ReadMe.
+- [Changelog](/Changelog.md): If you don't plan to track a changelog, remove this file and it's reference from the ReadMe.
 - [Contributing](/docs/Contributing.md): Update the contributing guidelines to match your module's contributing guidelines, or remove it.
 - [Architectural Decision Records](/docs/ArchitectureDecisionRecords/): Remove this directory if you don't plan to use ADRs, and it's reference from the Contributing page.
 - [bug_report](/.github/ISSUE_TEMPLATE/bug_report.md), [feature_request](/.github/ISSUE_TEMPLATE/feature_request.md), [pull_request_template](/.github/pull_request_template.md): Update the bug report, feature request, and pull request templates as needed to meet your requirements, or remove them.
