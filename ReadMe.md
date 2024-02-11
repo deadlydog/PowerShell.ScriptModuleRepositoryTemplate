@@ -117,6 +117,13 @@ A short description of what this project does.
 A short description of why this project exists.
 What use-case is it meant to solve?
 
+## ✨ Features
+
+List the features of this project:
+
+- Feature 1
+- Feature 2
+
 ## 🚀 Quick start
 
 A quick guide on how to get started with this module, including installation and usage:
