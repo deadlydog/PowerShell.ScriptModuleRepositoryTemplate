@@ -9,6 +9,12 @@ on:
 
   # Allows the deployment workflow to call this workflow.
   workflow_call:
+    inputs:
+      versionNumber:
+        description: 'The version number to use for the module. This should be in the format of "Major.Minor.Patch". e.g. "1.0.0". Future builds will increment from this version number. This input is optional. If not provided, the previous version numbers Patch will be incremented.'
+        required: false
+        type: string
+        default: ''
     # Outputs required by the deployment workflow.
     outputs:
       powerShellModuleName:
