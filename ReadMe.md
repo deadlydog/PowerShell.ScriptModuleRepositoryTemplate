@@ -1,6 +1,6 @@
 # Template PowerShell Script Module Repository
 
-A template repository to create new PowerShell modules quickly with boilerplate code and CI/CD workflows already defined.
+A template repository to create new PowerShell modules quickly with boilerplate files and CI/CD workflows already defined.
 
 ## 📄 Template setup instructions
 
@@ -96,8 +96,7 @@ In your template repo, you would want to add instructions to do a find-and-repla
 
 Buy me a hot apple cider for providing this template open source and for free 🙂
 
-FOR AN APP SPECIFIC DONATE LINK [GO HERE](https://www.paypal.com/cgi-bin/webscr?cmd=_button-management) AND CREATE A NEW BUTTON, THEN REPLACE THE `BUTTON_ID_GOES_HERE` WITH THE NEW BUTTON'S ID
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BUTTON_ID_GOES_HERE)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5MWSTSXNYEJWW)
 
 ### Remove this section and everything above once setup is complete
 
