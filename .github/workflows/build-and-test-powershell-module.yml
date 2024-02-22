@@ -51,7 +51,7 @@ jobs:
       deployFilesArtifactName: ${{ env.deployFilesArtifactName }}
     steps:
       - name: Checkout the repo source code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # If you do not want to use spellcheck, delete this step and the .cspell.json file in the repository root.
       - name: Run spellcheck
