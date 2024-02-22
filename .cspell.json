@@ -6,9 +6,13 @@
 	"version": "0.2",
 	"ignorePaths": [],
 	"words": [
-
+		"hashtable" // PowerShell Hashtable
 	],
 	"ignoreWords": [
-
+		"Hmmss", // Time format
+		"jacoco", // Java code coverage
+		"madrapps", // GitHub action author
+		"nunit", // .NET unit testing framework
+		"pwsh" // PowerShell Core
 	]
 }
