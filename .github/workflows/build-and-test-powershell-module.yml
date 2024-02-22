@@ -53,8 +53,10 @@ jobs:
       - name: Checkout the repo source code
         uses: actions/checkout@v3
 
-      - name: Run spellcheck
-        uses: streetsidesoftware/cspell-action@v3
+      # Uncomment the following step to run spellcheck on the repo.
+      # You can customize the spellcheck settings and dictionary by creating a cspell.json file in the root of the repo.
+      # - name: Run spellcheck
+      #   uses: streetsidesoftware/cspell-action@v5
 
       - name: Display PowerShell version being used
         shell: pwsh
