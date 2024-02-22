@@ -54,7 +54,7 @@ jobs:
         uses: actions/checkout@v3
 
       # Uncomment the following step to run spellcheck on the repo.
-      # You can customize the spellcheck settings and dictionary by creating a cspell.json file in the root of the repo.
+      # You can customize the spellcheck settings and dictionary by creating a .cspell.json file in the root of the repo.
       # - name: Run spellcheck
       #   uses: streetsidesoftware/cspell-action@v5
 
