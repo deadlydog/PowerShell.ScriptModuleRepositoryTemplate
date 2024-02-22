@@ -53,11 +53,9 @@ jobs:
       - name: Checkout the repo source code
         uses: actions/checkout@v3
 
-      # Uncomment the following step to run spellcheck on the repo.
-      # Customize the spellcheck settings and dictionary by creating a .cspell.json file in the root of the repo.
-      # See configuration examples at https://cspell.org/configuration/.
-      # - name: Run spellcheck
-      #   uses: streetsidesoftware/cspell-action@v5
+      # If you do not want to use spellcheck, delete this step and the .cspell.json file in the repository root.
+      - name: Run spellcheck
+        uses: streetsidesoftware/cspell-action@v5
 
       - name: Display PowerShell version being used
         shell: pwsh
