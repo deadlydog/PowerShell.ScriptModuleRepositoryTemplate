@@ -31,25 +31,28 @@ In short, the steps are:
 
 1. Click the `Use this template` button at the top of the repository and choose `Create a new repository`.
 1. Name your new repository and give it a description.
-1. Click `Create repository`.
-
-You should now have this repository in your account with the name you chose.
-Clone it to your local machine to start making changes to it.
+1. Click the `Create repository` button.
+1. You should now have the new repository in your account with the name you chose.
+1. Clone your new repository to your local machine to start making changes to it.
 
 ### 🤖 Replace repo template information
 
-Run the [TODO](/TODO.ps1) script to update the repository files with your module's information.
+Run the [_InitializeRepository.ps1](/_InitializeRepository.ps1) script to update the repository files with your module's information.
 You will be prompted to enter the following information:
 
-- Your modules's name (no spaces)
+- Your module's name (no spaces)
 - Your name or organization name (may contain spaces)
 
-The script will perform a find-and-replace across the entire repository to update the appropriate files with the information you provide.
+<details>
+<summary>Click to see the high-level operations the script performs</summary>
+
 The script performs the following actions:
 
 - Replaces `Template.PowerShell.ScriptModule` with your module's name.
 - Replaces `Daniel Schroeder` with your name or organization name.
 - Updates the PowerShell module manifest's `GUID` property with a new unique GUID.
+
+</details>
 
 For information that can not be updated automatically, perform the following actions after running the above script:
 
