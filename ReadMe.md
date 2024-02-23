@@ -104,7 +104,7 @@ May require changes:
 - Build and deployment workflows: The workflows include extra steps that you may not want, such as spell check, code coverage, etc.
   Review the workflows and remove any steps that you don't want to include in your CI/CD pipeline.
 
-### 📋 Step 6: Create your own template (optional)
+### 📋 Step 6 (optional): Create your own template
 
 Now that you have the repository looking the way you want, you may want to use it as a template for your future modules so that you don't have to make all of the same changes each time.
 In GitHub, from the repo's `Settings` tab under the `General` section, you can rename the repository to reflect that it is a template and check the box to make it a `Template repository`.
@@ -112,7 +112,7 @@ In GitHub, from the repo's `Settings` tab under the `General` section, you can r
 The caveat here is you have already ran the script that updated the repository files with your module's name and other information.
 In your template repo, you would want to add instructions to do a find-and-replace on the repository files to update the module's name, and any other information you want changed for new modules created from your template.
 
-### ❤ Step 7: Donate to support this template (optional)
+### ❤ Step 7 (optional): Donate to support this template
 
 Buy me a hot apple cider for providing this template open source and for free 🙂
 
