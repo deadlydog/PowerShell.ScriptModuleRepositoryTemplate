@@ -4,14 +4,14 @@ A template repository to create new PowerShell modules quickly with boilerplate 
 
 ## ✨ Features
 
-Using this template for your git repository will provide the following features out-of-the-box:
+Use this template for your new git repository to get the following features out-of-the-box:
 
 - GitHub Actions workflows or Azure DevOps Pipelines YAML files that:
-  - Publish a prerelease version on every commit to the `main` branch, and the stable version once manually approved.
+  - Publish a prerelease version on every commit to the `main` branch, and a stable version once manually approved.
     - Can also manually trigger deployments of feature branches.
   - Version the module.
   - Run PSScriptAnalyzer to ensure best practices are followed.
-  - Run tests on multiple platforms (Windows, Linux, MacOS).
+  - Run build tests, and smoke tests on multiple platforms (Windows, Linux, MacOS).
   - Publish the module to the PowerShell Gallery or a custom feed.
   - Spell check all files in the repository.
   - Display test code coverage results on PRs.
@@ -24,7 +24,7 @@ Using this template for your git repository will provide the following features 
 Use this template to create a new repository for your PowerShell module.
 Follow the instructions below to get started.
 
-### 🗍 Create a new repo from this template
+### 🗍 Step 1: Create a new repo from this template
 
 The official docs for creating a new repository from a template can [be found here](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 In short, the steps are:
@@ -35,7 +35,7 @@ In short, the steps are:
 1. You should now have the new repository in your account with the name you chose.
 1. Clone your new repository to your local machine to start making changes to it.
 
-### 🤖 Replace repo template information
+### 🤖 Step 2: Replace repo template information
 
 Run the [_InitializeRepository.ps1](/_InitializeRepository.ps1) script to update the repository files with your module's information.
 You will be prompted to enter the following information:
@@ -58,7 +58,7 @@ For information that can not be updated automatically, perform the following act
 
 1. Search for `UPDATE ME` in the repository and update the file accordingly.
 
-### ➕ Add your module
+### ➕ Step 3: Add your module
 
 If you already have a module written, add the module's `.psm1` and `.psd1` files to the `src` directory, replacing the existing files.
 
@@ -70,7 +70,7 @@ If you already have a module written, add the module's `.psm1` and `.psd1` files
       1. Rename the `Template.PowerShell.ScriptModule.psm1` and `Template.PowerShell.ScriptModule.psd1` files in the `src` directory to match your module name.
 1. Perform a find-and-replace across the entire repository to replace `Template.PowerShell.ScriptModule` with your module's name (no spaces). -->
 
-### 🚀 Update your CI/CD workflows
+### 🚀 Step 4: Update your CI/CD workflows
 
 This template includes CI/CD workflows for building and publishing the PowerShell module using both GitHub Actions and Azure DevOps Pipelines.
 Follow the instructions for the CI/CD system you plan to use.
@@ -83,7 +83,7 @@ If using GitHub Actions for your CI/CD workflows, perform the following steps:
 
 If using Azure DevOps Pipelines for your CI/CD pipelines, perform the following steps:
 
-### ✔ Update boilerplate repo files
+### ✔ Step 5: Update boilerplate repo files
 
 The following boilerplate git repository files should be reviewed and updated or removed.
 
@@ -104,7 +104,7 @@ May require changes:
 - Build and deployment workflows: The workflows include extra steps that you may not want, such as spell check, code coverage, etc.
   Review the workflows and remove any steps that you don't want to include in your CI/CD pipeline.
 
-### 📋 Create your own template (optional)
+### 📋 Step 6: Create your own template (optional)
 
 Now that you have the repository looking the way you want, you may want to use it as a template for your future modules so that you don't have to make all of the same changes each time.
 In GitHub, from the repo's `Settings` tab under the `General` section, you can rename the repository to reflect that it is a template and check the box to make it a `Template repository`.
@@ -112,13 +112,13 @@ In GitHub, from the repo's `Settings` tab under the `General` section, you can r
 The caveat here is you have already ran the script that updated the repository files with your module's name and other information.
 In your template repo, you would want to add instructions to do a find-and-replace on the repository files to update the module's name, and any other information you want changed for new modules created from your template.
 
-### ❤ Donate to support this template
+### ❤ Step 7: Donate to support this template (optional)
 
 Buy me a hot apple cider for providing this template open source and for free 🙂
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5MWSTSXNYEJWW)
 
-### Remove this section and everything above once setup is complete
+### ❌ Step 8: Remove this section and everything above once setup is complete
 
 > [!IMPORTANT]
 > All of the information above can be deleted once you have your module setup and the CI/CD pipeline workflows are working.
