@@ -48,7 +48,7 @@ The script will perform a find-and-replace across the entire repository to updat
 The script performs the following actions:
 
 - Replaces `Template.PowerShell.ScriptModule` with your module's name.
-- Replaces `YourNameOrOrganizationNameHere` with your name or organization name.
+- Replaces `Daniel Schroeder` with your name or organization name.
 - Updates the PowerShell module manifest's `GUID` property with a new unique GUID.
 
 For information that can not be updated automatically, perform the following actions after running the above script:

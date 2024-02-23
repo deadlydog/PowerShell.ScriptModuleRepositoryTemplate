@@ -15,13 +15,13 @@
   GUID = '643e6cf9-a844-4a1e-9771-643226c06943'
 
   # Author of this module
-  Author = 'YourNameOrOrganizationNameHere'
+  Author = 'Daniel Schroeder'
 
   # Company or vendor of this module
   CompanyName = 'Unknown'
 
   # Copyright statement for this module
-  Copyright = '(c) YourNameOrOrganizationNameHere. All rights reserved.'
+  Copyright = '(c) Daniel Schroeder. All rights reserved.'
 
   # Description of the functionality provided by this module
   # Description = ''
