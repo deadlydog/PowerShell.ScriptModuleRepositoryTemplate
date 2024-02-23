@@ -2,6 +2,23 @@
 
 A template repository to create new PowerShell modules quickly with boilerplate files and CI/CD workflows already defined.
 
+## ✨ Features
+
+Using this template for your git repository will provide the following features out-of-the-box:
+
+- GitHub Actions workflows or Azure DevOps Pipelines YAML files that:
+  - Publish a prerelease version on every commit to the `main` branch, and the stable version once manually approved.
+    - Can also manually trigger deployments of feature branches.
+  - Version the module.
+  - Run PSScriptAnalyzer to ensure best practices are followed.
+  - Run tests on multiple platforms (Windows, Linux, MacOS).
+  - Publish the module to the PowerShell Gallery or a custom feed.
+  - Spell check all files in the repository.
+  - Display test code coverage results on PRs.
+- Visual Studio Code tasks to easily run Pester tests and PSScriptAnalyzer locally.
+- A `.devcontainer` for use with Visual Studio Code's [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and [GitHub Codespaces](https://github.com/features/codespaces).
+- Boilerplate repository files, such as ReadMe, License, Changelog, .gitignore, .editorconfig, PR and Issue templates, and more.
+
 ## 📄 Template setup instructions
 
 Use this template to create a new repository for your PowerShell module.
@@ -90,7 +107,7 @@ Now that you have the repository looking the way you want, you may want to use i
 In GitHub, from the repo's `Settings` tab under the `General` section, you can rename the repository to reflect that it is a template and check the box to make it a `Template repository`.
 
 The caveat here is you have already ran the script that updated the repository files with your module's name and other information.
-In your template repo, you would want to add instructions to do a find-and-replace on the repository files to update the module's name, and any other information you want changed for new modules created from the template.
+In your template repo, you would want to add instructions to do a find-and-replace on the repository files to update the module's name, and any other information you want changed for new modules created from your template.
 
 ### ❤ Donate to support this template
 
