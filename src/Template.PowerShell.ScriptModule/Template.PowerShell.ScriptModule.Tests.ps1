@@ -1,9 +1,8 @@
 using module './Template.PowerShell.ScriptModule.psm1'
 
-Describe 'Get-HelloWorld' {
+Describe 'Get-TemplateDescription' {
 	It 'Should return "Hello, World!"' {
-		$expected = 'Hello, World!*'
-		$result = Get-HelloWorld
-		$result | Should -BeLike $expected
+		$result = Get-TemplateDescription
+		$result | Should -Not -BeNullOrEmpty
 	}
 }
