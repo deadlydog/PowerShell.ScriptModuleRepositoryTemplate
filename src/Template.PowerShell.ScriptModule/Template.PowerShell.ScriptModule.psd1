@@ -3,7 +3,7 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-RootModule = 'YourModuleName.psm1'
+RootModule = 'Template.PowerShell.ScriptModule.psm1'
 
 # Version number of this module.
 ModuleVersion = '0.0.0'

@@ -47,7 +47,7 @@ You will be prompted to enter the following information:
 The script will perform a find-and-replace across the entire repository to update the appropriate files with the information you provide.
 The script performs the following actions:
 
-- Replaces `YourModuleName` with your module's name.
+- Replaces `Template.PowerShell.ScriptModule` with your module's name.
 - Replaces `YourNameOrOrganizationNameHere` with your name or organization name.
 - Updates the PowerShell module manifest's `GUID` property with a new unique GUID.
 
@@ -62,10 +62,10 @@ If you already have a module written, add the module's `.psm1` and `.psd1` files
 <!-- 1. Add your module to the `src` directory.
    1. If you already have a module written:
       1. Add the `.psm1` and `.psd1` files directly to the `src` directory.
-      1. Delete the `YourModuleName.psm1` and `YourModuleName.psd1` files from the `src` directory.
+      1. Delete the `Template.PowerShell.ScriptModule.psm1` and `Template.PowerShell.ScriptModule.psd1` files from the `src` directory.
    1. If you have not written the module yet:
-      1. Rename the `YourModuleName.psm1` and `YourModuleName.psd1` files in the `src` directory to match your module name.
-1. Perform a find-and-replace across the entire repository to replace `YourModuleName` with your module's name (no spaces). -->
+      1. Rename the `Template.PowerShell.ScriptModule.psm1` and `Template.PowerShell.ScriptModule.psd1` files in the `src` directory to match your module name.
+1. Perform a find-and-replace across the entire repository to replace `Template.PowerShell.ScriptModule` with your module's name (no spaces). -->
 
 ### 🚀 Update your CI/CD workflows
 

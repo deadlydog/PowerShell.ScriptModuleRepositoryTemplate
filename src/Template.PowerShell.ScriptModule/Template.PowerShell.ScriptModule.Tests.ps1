@@ -1,4 +1,4 @@
-using module './YourModuleName.psm1'
+using module './Template.PowerShell.ScriptModule.psm1'
 
 Describe 'Get-HelloWorld' {
 	It 'Should return "Hello, World!"' {
