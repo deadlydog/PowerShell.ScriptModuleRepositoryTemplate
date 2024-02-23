@@ -83,7 +83,7 @@ If using GitHub Actions for your CI/CD workflows, perform the following steps:
 
 If using Azure DevOps Pipelines for your CI/CD pipelines, perform the following steps:
 
-### ✔ Step 5: Update boilerplate repo files
+### ✔ Step 5: Review and update boilerplate repo files
 
 The following boilerplate git repository files should be reviewed and updated or removed.
 
