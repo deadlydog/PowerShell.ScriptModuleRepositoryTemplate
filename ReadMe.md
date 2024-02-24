@@ -45,7 +45,7 @@ The official docs for creating a new repository from a template can [be found he
 In short, the steps are:
 
 1. Click the `Use this template` button at the top of the repository and choose `Create a new repository`.
-1. Name your new repository and give it a description.
+1. Name your new repository (including your module name is a good idea) and give it a description.
 1. Click the `Create repository` button.
 1. You should now have the new repository in your account with the name you chose.
 1. Clone your new repository to your local machine to start making changes to it.
