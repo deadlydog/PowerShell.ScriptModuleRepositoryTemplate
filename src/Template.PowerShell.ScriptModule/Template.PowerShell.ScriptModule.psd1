@@ -18,13 +18,17 @@
   Author = 'Daniel Schroeder'
 
   # Company or vendor of this module
-  CompanyName = 'Unknown'
+  CompanyName = 'Daniel Schroeder'
 
   # Copyright statement for this module
   Copyright = '(c) Daniel Schroeder. All rights reserved.'
 
   # Description of the functionality provided by this module
-  # Description = ''
+  Description = @'
+This module does nothing, but is part of a template git repository that you can clone to create new PowerShell script modules quickly and easily with boilerplate files and CI/CD workflows already defined.
+
+Checkout the template repository at https://github.com/deadlydog/Template.PowerShell.ScriptModule.
+'@
 
   # Minimum version of the PowerShell engine required by this module
   # PowerShellVersion = ''
@@ -91,19 +95,31 @@
     PSData = @{
 
       # Tags applied to this module. These help with module discovery in online galleries.
-      # Tags = @()
+      Tags = @(
+        'PowerShell'
+        'Module'
+        'Template'
+        'ScriptModule'
+        'GitHub'
+        'Actions'
+        'AzureDevOps'
+        'DevOps'
+        'Pipelines'
+        'CICD'
+        'Deploy'
+      )
 
       # A URL to the license for this module.
-      # LicenseUri = ''
+      LicenseUri = 'https://github.com/deadlydog/Template.PowerShell.ScriptModule/blob/main/License.md'
 
       # A URL to the main website for this project.
-      # ProjectUri = ''
+      ProjectUri = 'https://github.com/deadlydog/Template.PowerShell.ScriptModule'
 
       # A URL to an icon representing this module.
       # IconUri = ''
 
       # ReleaseNotes of this module
-      # ReleaseNotes = ''
+      ReleaseNotes = 'Changelog: https://github.com/deadlydog/Template.PowerShell.ScriptModule/blob/main/Changelog.md'
 
       # Prerelease string of this module
       # Prerelease = ''

@@ -7,9 +7,10 @@
 	"language": "en",
 	"ignorePaths": [],
 	"words": [
-		"hashtable" // PowerShell Hashtable
+		"hashtable"
 	],
 	"ignoreWords": [
+		"CICD", // Continuous Integration/Continuous Deployment
 		"CODEOWNERS", // GitHub CODEOWNERS
 		"Codespace", // GitHub Codespaces
 		"Codespaces", // GitHub Codespaces

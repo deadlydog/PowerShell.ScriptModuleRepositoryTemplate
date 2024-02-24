@@ -9,7 +9,6 @@ Things to still do:
 - Prompt user for module name, org name, pipelines or actions, PowerShell gallery or custom feed with an option to leave it blank to - fill it in later
 - Show instructions for granting GitHub permissions etc. during the prompt script
 - Rename function to Get-TemplateDescription or similar and have it explain the module and a link to it.
-- Update the manifest info to explain the project and have a link
 - Make azure DevOps and GitHub steps in the ReadMe collapsible.
   Have screenshots and link to recording of the setup in both, since they involve clicking around in the UI.
 - In the ReadMe setup instructions or above, have a sentence or two explaining the layout of the ReadMe, or maybe a table of contents
