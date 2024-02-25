@@ -1,0 +1,119 @@
+{
+	// For more info about out the tasks.json format see: https://code.visualstudio.com/docs/editor/tasks
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run all build tasks",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"dependsOn": [
+				"Run PSScriptAnalyzer linter"
+			]
+		},
+		{
+			"label": "Run all test tasks",
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"dependsOn": [
+				"Run all Pester tests"
+			]
+		},
+		{
+			"label": "Run PSScriptAnalyzer linter",
+			"type": "shell",
+			"options": {
+				"shell": {
+					"executable": "pwsh",
+					"args": [
+						"-NoProfile",
+						"-Command"
+					]
+				}
+			},
+			"command": "Invoke-ScriptAnalyzer -Path . -Recurse -EnableExit",
+			"group": "build",
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated",
+				"clear": true,
+				"group": "build"
+			},
+			"problemMatcher": [
+				"$func-powershell-watch"
+			]
+		},
+		{
+			"label": "Run all Pester tests",
+			"type": "shell",
+			"options": {
+				"shell": {
+					"executable": "pwsh",
+					"args": [
+						"-NoProfile",
+						"-Command"
+					]
+				}
+			},
+			"command": "Invoke-Pester -Configuration (New-PesterConfiguration @{ Output = @{ Verbosity = 'Detailed' }})",
+			"group": "test",
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated",
+				"clear": true
+			},
+			"problemMatcher": [
+				"$func-powershell-watch"
+			]
+		},
+		{
+			"label": "Run Pester code coverage",
+			"type": "shell",
+			"options": {
+				"shell": {
+					"executable": "pwsh",
+					"args": [
+						"-NoProfile",
+						"-Command"
+					]
+				}
+			},
+			"command": "Invoke-Pester -Configuration (New-PesterConfiguration @{ Output = @{ Verbosity = 'Detailed' }; CodeCoverage = @{ Enabled = $true }})",
+			"group": "test",
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated",
+				"clear": true
+			},
+			"problemMatcher": [
+				"$func-powershell-watch"
+			]
+		},
+		{
+			"label": "Test module manifest validity",
+			"type": "shell",
+			"options": {
+				"shell": {
+					"executable": "pwsh",
+					"args": [
+						"-NoProfile",
+						"-Command"
+					]
+				}
+			},
+			"command": "Get-ChildItem -Path ./src -Include *.psd1 -Recurse | Test-ModuleManifest",
+			"group": "test",
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated",
+				"clear": true
+			},
+			"problemMatcher": [
+				"$func-powershell-watch"
+			]
+		}
+	]
+}

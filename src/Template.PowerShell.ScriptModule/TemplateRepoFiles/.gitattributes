@@ -1,0 +1,41 @@
+# Use 'git add --renormalize .' to apply rules to files added to the repository before the .gitattributes file.
+
+# Have GitHub language statistics ignore generated files.
+#	More info: https://github.com/github-linguist/linguist/blob/master/docs/overrides.md
+#generatedFiles/** linguist-generated=true
+
+# Auto detect text files and perform LF normalization.
+* text=auto
+
+# Documents
+*.doc diff=astextplain
+*.DOC diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.dot diff=astextplain
+*.DOT diff=astextplain
+*.pdf diff=astextplain
+*.PDF diff=astextplain
+*.rtf diff=astextplain
+*.RTF diff=astextplain
+*.md text
+*.adoc text
+*.textile text
+*.mustache text
+*.csv text
+*.tab text
+*.tsv text
+*.sql text
+
+# Graphics
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.tif binary
+*.tiff binary
+*.ico binary
+# SVG treated as an asset (binary) by default, but it's actually just a text file so let's treat it as one.
+#*.svg binary
+*.svg text
+*.eps binary

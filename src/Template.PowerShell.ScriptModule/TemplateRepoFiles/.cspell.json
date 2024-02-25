@@ -1,0 +1,24 @@
+// This is the configuration file for cspell (code spell check).
+// Use this to define legitimate words not in the dictionary, and other words the spellcheck should ignore.
+// Used by the streetsidesoftware.code-spell-checker VS Code extension and streetsidesoftware/cspell-action@v3 GitHub Action.
+// For more information on configuration, see https://cspell.org/configuration/.
+{
+	"version": "0.2",
+	"language": "en",
+	"ignorePaths": [],
+	"words": [
+		"hashtable"
+	],
+	"ignoreWords": [
+		"CICD", // Continuous Integration/Continuous Deployment
+		"CODEOWNERS", // GitHub CODEOWNERS
+		"Codespace", // GitHub Codespaces
+		"Codespaces", // GitHub Codespaces
+		"devcontainer", // VS Code devcontainer
+		"Hmmss", // Time format
+		"jacoco", // Java code coverage
+		"madrapps", // GitHub action author
+		"nunit", // .NET unit testing framework
+		"pwsh" // PowerShell Core
+	]
+}
