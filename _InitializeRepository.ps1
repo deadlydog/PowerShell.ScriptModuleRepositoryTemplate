@@ -7,7 +7,7 @@ This script will delete all files in this repo and replace them with template fi
 If you have made changes to any files you may want to commit them before continuing, as this script will likely overwrite them.
 "
 
-	[string] $moduleName = Read-Host -Prompt "Enter the name of your module (e.g. 'YourModuleName')"
+	[string] $moduleName = Read-Host -Prompt "Enter the name of your module without spaces (e.g. 'YourModuleName')"
 
 	[string] $organizationName = Read-Host -Prompt "Enter your name, or the the name of your organization (e.g. 'My Company'). This will be used in the module manifest and repository license"
 
@@ -16,6 +16,8 @@ If you have made changes to any files you may want to commit them before continu
 	Remove-TemplateModuleFiles
 	Set-ModuleFileNames -moduleName $moduleName
 	Set-TemplateTokenValuesInAllRepoFiles -moduleName $moduleName -organizationName $organizationName
+
+	Write-Host -ForegroundColor Green "Repo initialization complete. You can now commit the changes to your repository."
 }
 
 Begin
