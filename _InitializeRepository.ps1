@@ -25,7 +25,7 @@ Begin
 
 	function Remove-AllRepositoryFilesExceptTemplateModuleFiles
 	{
-		Get-ChildItem -Path $RepositoryRoot -Recurse |
+		Get-ChildItem -Path $RepositoryRoot -Recurse -File |
 			Where-Object {
 				$_.FullName -notlike "$RepositoryRoot\.git\*" -and # Don't delete the .git directory.
 				$_.FullName -notlike "$RepositoryRoot\_InitializeRepository.ps1" -and # Don't delete this script.
