@@ -25,11 +25,20 @@ Begin
 
 	function Remove-AllRepositoryFilesExceptTemplateModuleFiles
 	{
-		Get-ChildItem -Path $RepositoryRoot -Recurse |
+		# Delete all files except the ones we want to keep.
+		Get-ChildItem -Path $RepositoryRoot -Recurse -File |
 			Where-Object {
 				$_.FullName -notlike "$RepositoryRoot\.git\*" -and # Don't delete the .git directory.
 				$_.FullName -notlike "$RepositoryRoot\_InitializeRepository.ps1" -and # Don't delete this script.
 				$_.FullName -notlike "$RepositoryRoot\src\Template.PowerShell.ScriptModule\*" # Don't delete the template module files.
+			} |
+			Remove-Item -Force
+
+		# Delete all empty directories that were left behind.
+		Get-ChildItem -Path $RepositoryRoot -Recurse -Directory |
+			Sort-Object -Property FullName -Descending | # Delete child directories before parent directories.
+			Where-Object {
+				$_.GetFileSystemInfos().Count -eq 0
 			} |
 			Remove-Item -Force
 	}
