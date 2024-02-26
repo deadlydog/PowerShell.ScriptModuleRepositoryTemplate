@@ -2,18 +2,6 @@
 
 🚧 This repo is still a work in progress and not yet ready to be used 🚧
 
-Things to still do:
-
-- Create new deployment on tag creation maybe
-- Add instructions for how to assign version number in the contributing docs depending on if they are using actions or pipelines
-- Prompt user for module name, org name, pipelines or actions, PowerShell gallery or custom feed with an option to leave it blank to - fill it in later
-- Show instructions for granting GitHub permissions etc. during the prompt script
-- Rename function to Get-TemplateDescription or similar and have it explain the module and a link to it.
-- Make azure DevOps and GitHub steps in the ReadMe collapsible.
-  Have screenshots and link to recording of the setup in both, since they involve clicking around in the UI.
-- In the ReadMe setup instructions or above, have a sentence or two explaining the layout of the ReadMe, or maybe a table of contents
-- Add some badges as well to the ReadMe.
-
 A template repository to create new PowerShell modules quickly with boilerplate files and CI/CD workflows already defined.
 
 ## ✨ Features
@@ -132,44 +120,16 @@ Buy me a hot apple cider for providing this template open source and for free �
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5MWSTSXNYEJWW)
 
-### ❌ Step 8: Remove this section and everything above once setup is complete
+## TODO
 
-> [!IMPORTANT]
-> All of the information above can be deleted once you have your module setup and the CI/CD pipeline workflows are working.
->
-> Modify the information below for your new module, or just delete it all to have a blank canvas.
+Things to still do:
 
----
-
-## 💬 Description
-
-A short description of what this project does.
-
-## ❓ Why this exists
-
-A short description of why this project exists.
-What use-case is it meant to solve?
-
-## ✨ Features
-
-List the features of this project:
-
-- Feature 1
-- Feature 2
-
-## 🚀 Quick start
-
-A quick guide on how to get started with this module, including installation and usage:
-
-- A link to the module in the PowerShell Gallery.
-- Code snippets of installing and using the module.
-- Links to wiki or other documentation.
-
-## ➕ How to contribute
-
-Issues and Pull Requests are welcome.
-See [the Contributing page](docs/Contributing.md) for more details.
-
-## 📃 Changelog
-
-See what's changed in the application over time by viewing [the changelog](Changelog.md).
+- Create new deployment on tag creation maybe
+- Add instructions for how to assign version number in the contributing docs depending on if they are using actions or pipelines
+- Prompt user for module name, org name, pipelines or actions, PowerShell gallery or custom feed with an option to leave it blank to - fill it in later
+- Show instructions for granting GitHub permissions etc. during the prompt script
+- Rename function to Get-TemplateDescription or similar and have it explain the module and a link to it.
+- Make azure DevOps and GitHub steps in the ReadMe collapsible.
+  Have screenshots and link to recording of the setup in both, since they involve clicking around in the UI.
+- In the ReadMe setup instructions or above, have a sentence or two explaining the layout of the ReadMe, or maybe a table of contents
+- Add some badges as well to the ReadMe.
