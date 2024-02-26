@@ -35,11 +35,9 @@ Begin
 			Remove-Item -Force
 
 		# Delete all empty directories that were left behind.
-		Get-ChildItem -Path $RepositoryRoot -Recurse -Directory |
+		Get-ChildItem -Path $RepositoryRoot -Recurse -Force -Directory |
 			Sort-Object -Property FullName -Descending | # Delete child directories before parent directories.
-			Where-Object {
-				$_.GetFileSystemInfos().Count -eq 0
-			} |
+			Where-Object { $_.GetFileSystemInfos().Count -eq 0 } |
 			Remove-Item -Force
 	}
 
