@@ -21,11 +21,17 @@ If you have made changes to any files you may want to commit them before continu
 Begin
 {
 	$InformationPreference = 'Continue'
-	[string] $RepositoryRoot = $PSScriptRoot
+	[string] $RepositoryRoot = Resolve-Path -Path $PSScriptRoot
 
 	function Remove-AllRepositoryFilesExceptTemplateModuleFiles
 	{
-		Remove-Item -Path $RepositoryRoot\* -Recurse -Force -Exclude '.git\*','_InitializeRepository.ps1','src\Template.PowerShell.ScriptModule\*'
+		Get-ChildItem -Path $RepositoryRoot -Recurse |
+			Where-Object {
+				$_.FullName -notlike "$RepositoryRoot\.git\*" -and # Don't delete the .git directory.
+				$_.FullName -notlike "$RepositoryRoot\_InitializeRepository.ps1" -and # Don't delete this script.
+				$_.FullName -notlike "$RepositoryRoot\src\Template.PowerShell.ScriptModule\*" # Don't delete the template module files.
+			} |
+			Remove-Item -Force
 	}
 
 	function Copy-TemplateFilesToRepositoryRoot
