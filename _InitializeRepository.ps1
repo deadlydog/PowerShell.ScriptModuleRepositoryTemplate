@@ -3,24 +3,39 @@
 Process
 {
 	Write-Host -ForegroundColor Green "
-This script will replace the default template repository files and values with ones specific to your module.
-If you have made changes to any files, you may want to commit them before continuing, as this script may overwrite them.
+This script will replace the files in this repo with template files specific to your module.
+If you have made changes to any files you may want to commit them before continuing, as this script will likely overwrite them.
 "
 
 	[string] $moduleName = Read-Host -Prompt "Enter the name of your module (e.g. 'YourModuleName')"
 
 	[string] $organizationName = Read-Host -Prompt "Enter your name, or the the name of your organization (e.g. 'My Company'). This will be used in the module manifest and repository license"
 
+	Remove-AllRepositoryFilesExceptTemplateModuleFiles
+	Copy-TemplateFilesToRepositoryRoot
 	Remove-TemplateModuleFiles
-	New-ModuleFiles -ModuleName $moduleName -OrganizationName $organizationName
-	Set-RepositoryDefaultFiles -ModuleName $moduleName -OrganizationName $organizationName
-	Remove-TemplateDefaultFiles
+	Set-ModuleFileNames -moduleName $moduleName
+	Set-TemplateTokenValuesInAllRepoFiles -moduleName $moduleName -organizationName $organizationName
 }
 
 Begin
 {
 	$InformationPreference = 'Continue'
 	[string] $RepositoryRoot = $PSScriptRoot
+
+	function Remove-AllRepositoryFilesExceptTemplateModuleFiles
+	{
+		Remove-Item -Path $RepositoryRoot\* -Recurse -Force -Exclude '_InitializeRepository.ps1','src\Template.PowerShell.ScriptModule'
+	}
+
+	function Copy-TemplateFilesToRepositoryRoot
+	{
+		[string] $templateModuleDirectoryPath = "$RepositoryRoot\src\Template.PowerShell.ScriptModule"
+		if (Test-Path -Path $templateModuleDirectoryPath -PathType Container)
+		{
+			Copy-Item -Path $templateModuleDirectoryPath\* -Destination $RepositoryRoot -Recurse -Force
+		}
+	}
 
 	function Remove-TemplateModuleFiles
 	{
@@ -31,52 +46,45 @@ Begin
 		}
 	}
 
-	function New-ModuleFiles([string] $moduleName, [string] $organizationName)
+	function Set-ModuleFileNames([string] $moduleName)
 	{
-		[string] $moduleDirectoryPath = "$RepositoryRoot\src\$moduleName"
-		[string] $moduleFilePath = "$moduleDirectoryPath\$moduleName.psm1"
-		[string] $moduleManifestFilePath = "$moduleDirectoryPath\$moduleName.psd1"
-		[string] $moduleTestsFilePath = "$moduleDirectoryPath\$moduleName.Tests.ps1"
+		[string] $moduleDirectoryPath = "$RepositoryRoot\src\__NewModuleName__"
+		[string] $moduleFilePath = "$moduleDirectoryPath\__NewModuleName__.psm1"
+		[string] $moduleManifestFilePath = "$moduleDirectoryPath\__NewModuleName__.psd1"
+		[string] $moduleTestsFilePath = "$moduleDirectoryPath\__NewModuleName__.Tests.ps1"
 
-		# Create the module directory.
-		if (-Not (Test-Path -Path $moduleDirectoryPath -PathType Container))
+		if (Test-Path -Path $moduleDirectoryPath -PathType Container)
 		{
-			New-Item -Path $moduleDirectoryPath -ItemType Directory
+			Rename-Item -Path $moduleDirectoryPath -NewName $moduleName -Force
 		}
 
-		# Create the module file.
-		if (-Not (Test-Path -Path $moduleFilePath -PathType Leaf))
+		if (Test-Path -Path $moduleFilePath -PathType Leaf)
 		{
-
+			Rename-Item -Path $moduleFilePath -NewName "$moduleName.psm1" -Force
 		}
 
-		# Create the module manifest file.
-		if (-Not (Test-Path -Path $moduleManifestFilePath -PathType Leaf))
+		if (Test-Path -Path $moduleManifestFilePath -PathType Leaf)
 		{
-
-		}
-		else
-		{
-			Write-Host "Module manifest file already exists at '$moduleManifestFilePath'. Skipping creation."
+			Rename-Item -Path $moduleManifestFilePath -NewName "$moduleName.psd1" -Force
 		}
 
-		# Create the module tests file.
-		if (-Not (Test-Path -Path $moduleTestsFilePath -PathType Leaf))
+		if (Test-Path -Path $moduleTestsFilePath -PathType Leaf)
 		{
-
-		}
-		else
-		{
-			Write-Host "Module tests file already exists at '$moduleTestsFilePath'. Skipping creation."
+			Rename-Item -Path $moduleTestsFilePath -NewName "$moduleName.Tests.ps1" -Force
 		}
 	}
 
-	function Remove-TemplateDefaultFiles
+	function Set-TemplateTokenValuesInAllRepoFiles([string] $moduleName, [string] $organizationName)
 	{
-		[string] $templateDefaultFilesDirectoryPath = "$RepositoryRoot\_TemplateDefaultFiles"
-		if (Test-Path -Path $templateDefaultFilesDirectoryPath -PathType Container)
+		$repositoryFiles = Get-ChildItem -Path $RepositoryRoot -Recurse -File
+		foreach ($file in $repositoryFiles)
 		{
-			Remove-Item -Path $templateDefaultFilesDirectoryPath -Recurse -Force
+			$filePath = $file.FullName
+			$contents = Get-Content -Path $filePath
+			$contents = $contents -replace '__NewModuleName__', $moduleName
+			$contents = $contents -replace '__IndividualOrOrganizationName__', $organizationName
+			$contents = $contents -replace '__NewModuleGuid__', (New-Guid).ToString()
+			Set-Content -Path $filePath -Value $contents
 		}
 	}
 }

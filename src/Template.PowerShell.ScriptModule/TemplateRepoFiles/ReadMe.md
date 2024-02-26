@@ -1,4 +1,4 @@
-# NewModuleName PowerShell Module
+# __NewModuleName__ PowerShell Module
 
 ## 💬 Description
 
