@@ -10,7 +10,7 @@ BeforeAll {
 	# To run these tests on your local machine, comment out the Import-Module command above and uncomment the one below.
 	# 	Do this to use the module version from source code, not the installed version.
 	# 	This is necessary to test functionality that you've added to the module, but have not yet published and installed.
-	# Import-Module "$PSScriptRoot\..\src\Template.PowerShell.ScriptModule" -Force
+	# Import-Module "$PSScriptRoot\..\src\NewModuleName" -Force
 }
 
 Describe 'Get-HelloWorld' {
