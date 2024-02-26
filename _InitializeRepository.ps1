@@ -66,11 +66,6 @@ Begin
 		[string] $moduleManifestFilePath = "$moduleDirectoryPath\__NewModuleName__.psd1"
 		[string] $moduleTestsFilePath = "$moduleDirectoryPath\__NewModuleName__.Tests.ps1"
 
-		if (Test-Path -Path $moduleDirectoryPath -PathType Container)
-		{
-			Rename-Item -Path $moduleDirectoryPath -NewName $moduleName -Force
-		}
-
 		if (Test-Path -Path $moduleFilePath -PathType Leaf)
 		{
 			Rename-Item -Path $moduleFilePath -NewName "$moduleName.psm1" -Force
@@ -85,11 +80,17 @@ Begin
 		{
 			Rename-Item -Path $moduleTestsFilePath -NewName "$moduleName.Tests.ps1" -Force
 		}
+
+		# Rename the directory last.
+		if (Test-Path -Path $moduleDirectoryPath -PathType Container)
+		{
+			Rename-Item -Path $moduleDirectoryPath -NewName $moduleName -Force
+		}
 	}
 
 	function Set-TemplateTokenValuesInAllRepoFiles([string] $moduleName, [string] $organizationName)
 	{
-		$repositoryFiles = Get-ChildItem -Path $RepositoryRoot -Recurse -File
+		$repositoryFiles = Get-ChildItem -Path $RepositoryRoot -Recurse -File -Exclude '_InitializeRepository.ps1'
 		foreach ($file in $repositoryFiles)
 		{
 			$filePath = $file.FullName
