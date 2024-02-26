@@ -43,7 +43,7 @@ Begin
 
 	function Copy-TemplateFilesToRepositoryRoot
 	{
-		[string] $templateModuleDirectoryPath = "$RepositoryRoot\src\Template.PowerShell.ScriptModule"
+		[string] $templateModuleDirectoryPath = "$RepositoryRoot\src\Template.PowerShell.ScriptModule\TemplateRepoFiles"
 		if (Test-Path -Path $templateModuleDirectoryPath -PathType Container)
 		{
 			Copy-Item -Path $templateModuleDirectoryPath\* -Destination $RepositoryRoot -Recurse -Force
