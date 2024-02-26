@@ -133,3 +133,4 @@ Things to still do:
   Have screenshots and link to recording of the setup in both, since they involve clicking around in the UI.
 - In the ReadMe setup instructions or above, have a sentence or two explaining the layout of the ReadMe, or maybe a table of contents
 - Add some badges as well to the ReadMe.
+- Look at improving GitHub issue and PR templates: https://raw.githubusercontent.com/PowerShell/vscode-powershell/main/.github/ISSUE_TEMPLATE/bug-report.yml
