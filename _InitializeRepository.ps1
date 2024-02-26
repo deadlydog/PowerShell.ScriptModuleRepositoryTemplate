@@ -25,7 +25,7 @@ Begin
 
 	function Remove-AllRepositoryFilesExceptTemplateModuleFiles
 	{
-		Remove-Item -Path $RepositoryRoot\* -Recurse -Force -Exclude '_InitializeRepository.ps1','src\Template.PowerShell.ScriptModule'
+		Remove-Item -Path $RepositoryRoot\* -Recurse -Force -Exclude '.git','_InitializeRepository.ps1','src\Template.PowerShell.ScriptModule'
 	}
 
 	function Copy-TemplateFilesToRepositoryRoot
