@@ -3,7 +3,7 @@
 Process
 {
 	Write-Host -ForegroundColor Green "
-This script will replace the files in this repo with template files specific to your module.
+This script will delete all files in this repo and replace them with template files specific to your module.
 If you have made changes to any files you may want to commit them before continuing, as this script will likely overwrite them.
 "
 
