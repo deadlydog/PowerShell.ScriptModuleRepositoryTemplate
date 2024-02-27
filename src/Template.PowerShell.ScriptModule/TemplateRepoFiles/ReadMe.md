@@ -34,28 +34,21 @@ If using Azure DevOps Pipelines for your CI/CD pipelines, perform the following 
 
 ### ✔ Step 5: Review and update boilerplate repo files
 
-The following boilerplate git repository files should be reviewed and updated or removed.
+The following boilerplate git repository files should be reviewed and updated or removed as needed.
 
-Will require changes:
-
-- [License](/License.md): Update to match your module's license, and ensure it uses the correct name in the copyright.
-- [CODEOWNERS](/.github/CODEOWNERS): Update to match your module's maintainers, or remove this file.
-- [FUNDING](/.github/FUNDING.yml): Update to match your module's donation information, or remove this file.
-- [ReadMe](/ReadMe.md): Update with your module's information.
-
-May require changes:
-
-- Module manifest: Update the module manifest (the `.psd1` file in the `src` directory) with your module's information.
+- [__NewModuleName__.psd1](/src/__NewModuleName__/__NewModuleName__.psd1): Update the module manifest with your module's information.
 - [Changelog](/Changelog.md): If you don't plan to track a changelog, remove this file and it's reference from the ReadMe.
+- [License](/License.md): Update to match your module's license, and ensure it uses the correct name in the copyright.
 - [Contributing](/docs/Contributing.md): Update to match your module's contributing guidelines, or remove it.
-- [Architectural Decision Records](/docs/ArchitectureDecisionRecords/): Remove this directory if you don't plan to use ADRs, and it's reference from the Contributing page.
-- [bug_report](/.github/ISSUE_TEMPLATE/bug_report.md), [feature_request](/.github/ISSUE_TEMPLATE/feature_request.md), [pull_request_template](/.github/pull_request_template.md): Update the bug report, feature request, and pull request templates as needed to meet your requirements, or remove them.
+- [bug_report](/.github/ISSUE_TEMPLATE/bug_report.md), [feature_request](/.github/ISSUE_TEMPLATE/feature_request.md), [pull_request_template](/.github/pull_request_template.md): Update these GitHub templates as needed to meet your requirements, or remove them.
 - Build and deployment workflows: The workflows include extra steps that you may not want, such as spell check, code coverage, etc.
   Review the workflows and remove any steps that you don't want to include in your CI/CD pipeline.
+- [ReadMe](/ReadMe.md): Update this file with your module's information.
+  Some example template content is provided below; fill it out, or remove it and write your own.
 
 > [!IMPORTANT]
 > If you've made it this far, your repository is now ready for use! 🎉
-> You may delete all of the content above and commit any changes you've made.
+> You may delete this and all of the content above and commit any changes you've made.
 
 # __NewModuleName__ PowerShell Module
 
