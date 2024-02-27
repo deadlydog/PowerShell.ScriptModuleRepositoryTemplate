@@ -73,7 +73,7 @@ List the features of this project:
 A quick guide on how to get started with this module, including installation and usage:
 
 - A link to the module in the PowerShell Gallery.
-- Code snippets of installing and using the module.
+- Code examples of installing and and using the module.
 - Links to wiki or other documentation.
 
 ## ➕ How to contribute
