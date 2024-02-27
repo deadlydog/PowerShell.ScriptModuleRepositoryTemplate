@@ -60,53 +60,7 @@ For information that can not be updated automatically, perform the following act
 
 1. Search for `UPDATE ME` in the repository and update the file accordingly.
 
-### ➕ Step 3: Add your module
-
-If you already have a module written, add the module's `.psm1` and `.psd1` files to the `src` directory, replacing the existing files.
-
-<!-- 1. Add your module to the `src` directory.
-   1. If you already have a module written:
-      1. Add the `.psm1` and `.psd1` files directly to the `src` directory.
-      1. Delete the `Template.PowerShell.ScriptModule.psm1` and `Template.PowerShell.ScriptModule.psd1` files from the `src` directory.
-   1. If you have not written the module yet:
-      1. Rename the `Template.PowerShell.ScriptModule.psm1` and `Template.PowerShell.ScriptModule.psd1` files in the `src` directory to match your module name.
-1. Perform a find-and-replace across the entire repository to replace `Template.PowerShell.ScriptModule` with your module's name (no spaces). -->
-
-### 🚀 Step 4: Update your CI/CD workflows
-
-This template includes CI/CD workflows for building and publishing the PowerShell module using both GitHub Actions and Azure DevOps Pipelines.
-Follow the instructions for the CI/CD system you plan to use.
-
-#### 🐙🐱 GitHub Actions
-
-If using GitHub Actions for your CI/CD workflows, perform the following steps:
-
-#### ♻️ Azure DevOps Pipelines
-
-If using Azure DevOps Pipelines for your CI/CD pipelines, perform the following steps:
-
-### ✔ Step 5: Review and update boilerplate repo files
-
-The following boilerplate git repository files should be reviewed and updated or removed.
-
-Will require changes:
-
-- [License](/License.md): Update to match your module's license, and ensure it uses the correct name in the copyright.
-- [CODEOWNERS](/.github/CODEOWNERS): Update to match your module's maintainers, or remove this file.
-- [FUNDING](/.github/FUNDING.yml): Update to match your module's donation information, or remove this file.
-- [ReadMe](/ReadMe.md): Update with your module's information.
-
-May require changes:
-
-- Module manifest: Update the module manifest (the `.psd1` file in the `src` directory) with your module's information.
-- [Changelog](/Changelog.md): If you don't plan to track a changelog, remove this file and it's reference from the ReadMe.
-- [Contributing](/docs/Contributing.md): Update to match your module's contributing guidelines, or remove it.
-- [Architectural Decision Records](/docs/ArchitectureDecisionRecords/): Remove this directory if you don't plan to use ADRs, and it's reference from the Contributing page.
-- [bug_report](/.github/ISSUE_TEMPLATE/bug_report.md), [feature_request](/.github/ISSUE_TEMPLATE/feature_request.md), [pull_request_template](/.github/pull_request_template.md): Update the bug report, feature request, and pull request templates as needed to meet your requirements, or remove them.
-- Build and deployment workflows: The workflows include extra steps that you may not want, such as spell check, code coverage, etc.
-  Review the workflows and remove any steps that you don't want to include in your CI/CD pipeline.
-
-### 📋 Step 6 (optional): Create your own template
+## 📋 Create your own template (optional)
 
 Now that you have the repository looking the way you want, you may want to use it as a template for your future modules so that you don't have to make all of the same changes each time.
 In GitHub, from the repo's `Settings` tab under the `General` section, you can rename the repository to reflect that it is a template and check the box to make it a `Template repository`.
@@ -114,7 +68,7 @@ In GitHub, from the repo's `Settings` tab under the `General` section, you can r
 The caveat here is you have already ran the script that updated the repository files with your module's name and other information.
 In your template repo, you would want to add instructions to do a find-and-replace on the repository files to update the module's name, and any other information you want changed for new modules created from your template.
 
-### ❤ Step 7 (optional): Donate to support this template
+## ❤ Donate to support this template (optional)
 
 Buy me a hot apple cider for providing this template open source and for free 🙂
 
