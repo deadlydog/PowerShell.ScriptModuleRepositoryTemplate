@@ -88,3 +88,4 @@ Things to still do:
 - In the ReadMe setup instructions or above, have a sentence or two explaining the layout of the ReadMe, or maybe a table of contents
 - Add some badges as well to the ReadMe.
 - Look at improving GitHub issue and PR templates: https://raw.githubusercontent.com/PowerShell/vscode-powershell/main/.github/ISSUE_TEMPLATE/bug-report.yml
+- Update the module to be able to create new repos without using GitHub template. Have a New-PowerShellScriptModuleRepository cmdlet  
