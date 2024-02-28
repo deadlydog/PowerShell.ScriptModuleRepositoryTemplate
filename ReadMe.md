@@ -45,20 +45,7 @@ You will be prompted to enter the following information:
 - Your module's name (no spaces)
 - Your name or organization name (may contain spaces)
 
-<details>
-<summary>Click to see the high-level operations the script performs</summary>
-
-The script performs the following actions:
-
-- Replaces `Template.PowerShell.ScriptModule` with your module's name.
-- Replaces `Daniel Schroeder` with your name or organization name.
-- Updates the PowerShell module manifest's `GUID` property with a new unique GUID.
-
-</details>
-
-For information that can not be updated automatically, perform the following actions after running the above script:
-
-1. Search for `UPDATE ME` in the repository and update the file accordingly.
+Once the script completes, most of the repo files will be replaced and there will be some additional steps to follow in the [new ReadMe file](/src/Template.PowerShell.ScriptModule/TemplateRepoFiles/ReadMe.md).
 
 ## 📋 Create your own template (optional)
 
@@ -88,4 +75,4 @@ Things to still do:
 - In the ReadMe setup instructions or above, have a sentence or two explaining the layout of the ReadMe, or maybe a table of contents
 - Add some badges as well to the ReadMe.
 - Look at improving GitHub issue and PR templates: https://raw.githubusercontent.com/PowerShell/vscode-powershell/main/.github/ISSUE_TEMPLATE/bug-report.yml
-- Update the module to be able to create new repos without using GitHub template. Have a New-PowerShellScriptModuleRepository cmdlet  
+- Update the module to be able to create new repos without using GitHub template. Have a New-PowerShellScriptModuleRepository cmdlet
