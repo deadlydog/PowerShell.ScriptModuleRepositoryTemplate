@@ -76,3 +76,7 @@ Things to still do:
 - Add some badges as well to the ReadMe.
 - Look at improving GitHub issue and PR templates: https://raw.githubusercontent.com/PowerShell/vscode-powershell/main/.github/ISSUE_TEMPLATE/bug-report.yml
 - Update the module to be able to create new repos without using GitHub template. Have a New-PowerShellScriptModuleRepository cmdlet
+- For now remove the Azure DevOps components from the docs; will add it in once GitHub is working well.
+- To prevent having to store CI/CD manual setup images in the repo, maybe have them as an external link to a GitHub branch.
+  - Also create videos showing how to do the setup.
+- Add a simple PowerShell devcontainer for both this repo and the template.
