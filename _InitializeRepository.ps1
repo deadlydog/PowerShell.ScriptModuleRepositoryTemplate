@@ -12,8 +12,11 @@ If you have made changes to any files you may want to commit them before continu
 	[string] $organizationName = Read-Host -Prompt "Enter your name, or the the name of your organization (e.g. 'My Company'). This will be used in the module manifest and repository license"
 
 	Import-Module -Name $TemplateModuleDirectoryPath -Force
+	
 	Remove-AllRepositoryFilesExceptTemplateModuleFiles
 	New-PowerShellModuleRepository -RepositoryDirectoryPath $RepositoryDirectoryPath -ModuleName $moduleName -OrganizationName $organizationName
+
+	Remove-Module -Name Template.PowerShell.ScriptModule -Force
 	Remove-TemplateModuleFiles
 
 	Write-Host -ForegroundColor Green "Repo initialization complete. You can now commit the changes to your repository."
