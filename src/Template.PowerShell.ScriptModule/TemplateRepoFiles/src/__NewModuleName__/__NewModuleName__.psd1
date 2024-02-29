@@ -1,3 +1,5 @@
+# Module manifest docs: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_module_manifests
+
 @{
 
   # Script module or binary module file associated with this manifest.
