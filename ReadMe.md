@@ -72,6 +72,7 @@ Things to still do:
 - Rename function to Get-TemplateDescription or similar and have it explain the module and a link to it.
 - Make azure DevOps and GitHub steps in the ReadMe collapsible.
   Have screenshots and link to recording of the setup in both, since they involve clicking around in the UI.
+  Perhaps link to [this tutorial](https://dev.to/olalekan_oladiran_d74b7a6/how-to-enable-continuous-integration-with-azure-pipelines-1doi)?
 - In the ReadMe setup instructions or above, have a sentence or two explaining the layout of the ReadMe, or maybe a table of contents
 - Add some badges as well to the ReadMe.
 - Look at improving GitHub issue and PR templates: https://raw.githubusercontent.com/PowerShell/vscode-powershell/main/.github/ISSUE_TEMPLATE/bug-report.yml
