@@ -41,10 +41,11 @@ function Copy-TemplateFilesToRepositoryRoot([string] $repositoryDirectoryPath)
 {
 	if (-not (Test-Path -Path $repositoryDirectoryPath -PathType Container))
 	{
+		Write-Verbose "Creating the repository directory '$repositoryDirectoryPath'."
 		New-Item -Path $repositoryDirectoryPath -ItemType Directory > $null
 	}
 
-	[string] $templateModuleDirectoryPath = "$repositoryDirectoryPath\src\Template.PowerShell.ScriptModule\TemplateRepoFiles"
+	[string] $templateModuleDirectoryPath = "$PSScriptRoot\TemplateRepoFiles"
 	if (Test-Path -Path $templateModuleDirectoryPath -PathType Container)
 	{
 		Copy-Item -Path $templateModuleDirectoryPath\* -Destination $repositoryDirectoryPath -Recurse -Force
