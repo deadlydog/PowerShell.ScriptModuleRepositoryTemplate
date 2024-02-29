@@ -83,7 +83,7 @@ function Set-ModuleFileNames([string] $repositoryDirectoryPath, [string] $module
 
 function Set-TemplateTokenValuesInAllRepositoryFiles([string] $repositoryDirectoryPath, [string] $moduleName, [string] $organizationName)
 {
-	$repositoryFiles = Get-ChildItem -Path $RepositoryRoot -Recurse -File -Exclude '_InitializeRepository.ps1'
+	$repositoryFiles = Get-ChildItem -Path $repositoryDirectoryPath -Recurse -File
 	foreach ($file in $repositoryFiles)
 	{
 		$filePath = $file.FullName
