@@ -24,13 +24,13 @@ Otherwise, use these files as a starting point for your new module.
 This template includes CI/CD workflows for building and publishing the PowerShell module using both GitHub Actions and Azure DevOps Pipelines.
 Follow the instructions for the CI/CD system you plan to use.
 
-#### 🐙🐱 GitHub Actions
+#### GitHub Actions
 
 If using GitHub Actions for your CI/CD workflows, perform the following steps:
 
-#### ♻️ Azure DevOps Pipelines
+#### Azure DevOps Pipelines
 
-If using Azure DevOps Pipelines for your CI/CD pipelines, perform the following steps:
+Coming soon.
 
 ### ✔ Step 5: Review and update boilerplate repo files
 
