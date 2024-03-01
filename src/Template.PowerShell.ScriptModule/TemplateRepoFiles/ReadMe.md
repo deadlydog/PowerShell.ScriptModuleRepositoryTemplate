@@ -11,7 +11,7 @@ Steps 1 and 2 were already performed to get this far.
 
 ### ➕ Step 3: Add your module (if applicable)
 
-If you already have the module and tests written, replace the following files with your module's files:
+If you already have the module, manifest, and tests written, replace the following files with your module's files:
 
 - [__NewModuleName__.psm1](/src/__NewModuleName__/__NewModuleName__.psm1)
 - [__NewModuleName__.psd1](/src/__NewModuleName__/__NewModuleName__.psd1)
