@@ -45,7 +45,7 @@ You will be prompted to enter the following information:
 - Your module's name (no spaces)
 - Your name or organization name (may contain spaces)
 
-Once the script completes, most of the repo files will be replaced and there will be some additional steps to follow in the [new ReadMe file](/src/Template.PowerShell.ScriptModule/TemplateRepoFiles/ReadMe.md).
+Once the script completes, most of the repo files will be replaced and there will be some additional steps to follow in the [new ReadMe file](/src/Template.PowerShell.ScriptModule/TemplateRepoFiles/ReadMe.md) that replaces this one.
 
 ## 📋 Create your own template (optional)
 
