@@ -24,9 +24,50 @@ Otherwise, use these files as a starting point for your new module.
 This template includes CI/CD workflows for building and publishing the PowerShell module using both GitHub Actions and Azure DevOps Pipelines.
 Follow the instructions for the CI/CD system you plan to use.
 
+#### Create a PowerShell Gallery API Key
+
+In order to publish the module to the gallery, you need to get an API key.
+If you already have an API key that you want to use, you can skip to the next step.
+
+> [!TIP]
+> It is considered best practice to use a separate API key for each module you publish.
+> It reduces the impact scope if one of the API keys becomes compromised.
+
+To create a new API Key for the PowerShell Gallery:
+
+1. Navigate to <https://www.powershellgallery.com/account/apikeys>, and login if necessary.
+1. Click `Create` to create a new API key for this module.
+1. For the `Key Name` it is a good idea to include the name of your module.
+   e.g. `__NewModuleName__ module CI/CD pipeline`
+1. Ensure the `Push new packages and package versions` scope is selected.
+1. For the `Glob Pattern` enter the name of your module: `__NewModuleName__`
+1. Click the `Create` button to create the API key.
+1. Click the `Copy` button on the new API key to copy it to your clipboard, as you will need it for the next step.
+
 #### GitHub Actions
 
-If using GitHub Actions for your CI/CD workflows, perform the following steps:
+If using GitHub Actions for your CI/CD workflows, perform the following steps to setup your API key as a repository secret:
+
+1. Navigate to your GitHub repository in your browser.
+1. Go to the `Settings` tab for your repository.
+1. In the left-hand menu, in the `Security` section, click on `Secrets and variables` and select `Actions`.
+1. In the `Secrets` tab click the `New repository secret` button.
+1. Set the `Name` to: `POWERSHELL_GALLERY_API_KEY`
+1. Set the `Secret` to the API key value that you copied in the previous step.
+
+Next we want to create an Environment so that stable module versions require manual approval before being published to the gallery:
+
+1. In the left-hand menu, in the `Environments` section, click on `Environments`.
+1. Click the `New environment` button.
+1. Set the `Name` to: `production`
+1. Click the `Configure environment` button.
+1. Check the `Required reviewers` checkbox and add the appropriate reviewers.
+1. Click the `Save protection rules` button.
+
+If your account does not meet [the requirements to use `Environments`](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment), the `Environments` section will not be available.
+You will instead need to
+
+TODO FINISH THESE INSTRUCTIONS.
 
 #### Azure DevOps Pipelines
 
