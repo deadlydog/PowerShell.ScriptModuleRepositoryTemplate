@@ -65,9 +65,7 @@ Next we want to create an Environment so that stable module versions require man
 1. Click the `Save protection rules` button.
 
 If your account does not meet [the requirements to use `Environments`](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment), the `Environments` section will not be available.
-You will instead need to
-
-TODO FINISH THESE INSTRUCTIONS.
+You will instead need to use [the Manual Workflow Approval action](https://github.com/marketplace/actions/manual-workflow-approval).
 
 #### Azure DevOps Pipelines
 
