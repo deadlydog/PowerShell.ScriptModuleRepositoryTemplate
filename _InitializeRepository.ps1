@@ -16,7 +16,7 @@ If you have made changes to any files you may want to commit them before continu
 
 	Write-Information "Creating the template repository files."
 	Import-Module -Name $TemplateModuleDirectoryPath -Force
-	New-PowerShellModuleRepository -RepositoryDirectoryPath $RepositoryDirectoryPath -ModuleName $moduleName -OrganizationName $organizationName
+	New-PowerShellScriptModuleRepository -RepositoryDirectoryPath $RepositoryDirectoryPath -ModuleName $moduleName -OrganizationName $organizationName
 	Remove-Module -Name Template.PowerShell.ScriptModule -Force
 
 	Write-Information "Removing the template module files since we are done using it to create the template repository files."

@@ -14,9 +14,10 @@ For more information, visit the repository at https://github.com/deadlydog/Templ
 	Write-Output $description
 }
 
-function New-PowerShellModuleRepository
+function New-PowerShellScriptModuleRepository
 {
 	[CmdletBinding()]
+	[Alias('New-PSRepository')]
 	Param
 	(
 		[Parameter(Mandatory = $true, HelpMessage = "The path to the directory where the module repository should be created.")]
