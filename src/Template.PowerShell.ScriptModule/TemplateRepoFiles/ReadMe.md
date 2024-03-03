@@ -29,7 +29,7 @@ In order to publish the module to the gallery, you need to get an API key.
 If you already have an API key that you want to use, you can skip to the next step.
 
 > [!CAUTION]
-> It is considered best practice to use a separate API key for each module you publish.
+> It is considered best practice to use a different API key for each module you publish.
 > It reduces the impact scope if one of the API keys becomes compromised.
 
 If you will be publishing the module to a custom PowerShell Gallery feed, you will need to get an API key for that feed. Otherwise, follow the steps below.
@@ -44,7 +44,9 @@ If you will be publishing the module to a custom PowerShell Gallery feed, you wi
 1. Ensure the `Push new packages and package versions` scope is selected.
 1. For the `Glob Pattern` enter the name of your module: `__NewModuleName__`
 1. Click the `Create` button to create the API key.
-1. Click the `Copy` button on the new API key to copy it to your clipboard, as you will need it for the next step.
+1. Click the `Copy` button on the new API key to copy it to your clipboard, as you will need it for the next section.
+
+You may want to leave this page open in your browser until you have the API key saved in your repository secrets in the next section.
 
 </details>
 
@@ -63,19 +65,20 @@ If using GitHub Actions for your CI/CD workflows, perform the following steps to
 1. In the left-hand menu, in the `Security` section, click on `Secrets and variables` and select `Actions`.
 1. In the `Secrets` tab click the `New repository secret` button.
 1. Set the `Name` to: `POWERSHELL_GALLERY_API_KEY`
-1. Set the `Secret` to the API key value that you copied in the previous step.
+1. Set the `Secret` to the API key value that you copied in the previous section.
 
 Next we want to create an Environment so that stable module versions require manual approval before being published to the gallery:
 
+1. You should still be in the `Settings` section of your repository.
 1. In the left-hand menu, in the `Environments` section, click on `Environments`.
 1. Click the `New environment` button.
-1. Set the `Name` to: `production`
+1. Set the `Name` to (all lowercase): `production`
 1. Click the `Configure environment` button.
-1. Check the `Required reviewers` checkbox and add the appropriate reviewers.
+1. Check the `Required reviewers` checkbox and add the usernames of the people allowed to approve new stable version deployments.
 1. Click the `Save protection rules` button.
 
-If your account does not meet [the requirements to use `Environments`](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment), the `Environments` section will not be available.
-You will instead need to use [the Manual Workflow Approval action](https://github.com/marketplace/actions/manual-workflow-approval).
+If your GitHub account does not meet [the requirements to use `Environments`](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment), the `Environments` section will not be available.
+You will instead need to add [the Manual Workflow Approval action](https://github.com/marketplace/actions/manual-workflow-approval) to [the deployment workflow](/.github/workflows/build-test-and-deploy-powershell-module.yml) to block deployments until they are approved.
 
 </details>
 
