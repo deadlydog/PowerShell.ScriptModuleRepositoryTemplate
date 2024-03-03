@@ -121,4 +121,3 @@ Things to still do:
 - To prevent having to store CI/CD manual setup images in the repo, maybe have them as an external link to a GitHub branch.
   - Also create videos showing how to do the setup.
 - Maybe show instructions for setting up GitHub / Azure DevOps CI/CD during the initialization script. Or mention to follow the ReadMe instructions.
-- Add a simple PowerShell devcontainer for both this repo and the template.
