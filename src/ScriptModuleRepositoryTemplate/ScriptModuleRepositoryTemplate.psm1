@@ -33,7 +33,7 @@ function New-PowerShellScriptModuleRepository
 		It creates a new directory with the module repository files.
 
 	.LINK
-		https://github.com/deadlydog/Template.PowerShell.ScriptModule
+		https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate
 #>
 	[CmdletBinding()]
 	[Alias('New-PSRepository')]

@@ -3,7 +3,7 @@
 @{
 
   # Script module or binary module file associated with this manifest.
-  RootModule = 'Template.PowerShell.ScriptModule.psm1'
+  RootModule = 'ScriptModuleRepositoryTemplate.psm1'
 
   # Version number of this module.
   ModuleVersion = '0.0.0'
@@ -27,7 +27,7 @@
   Description = @'
 This module does nothing, but is part of a template git repository that you can clone to create new PowerShell script modules quickly and easily with boilerplate files and CI/CD workflows already defined.
 
-Checkout the template repository at https://github.com/deadlydog/Template.PowerShell.ScriptModule.
+Checkout the template repository at https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate.
 '@
 
   # Minimum version of the PowerShell engine required by this module
@@ -110,16 +110,16 @@ Checkout the template repository at https://github.com/deadlydog/Template.PowerS
       )
 
       # A URL to the license for this module.
-      LicenseUri = 'https://github.com/deadlydog/Template.PowerShell.ScriptModule/blob/main/License.md'
+      LicenseUri = 'https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate/blob/main/License.md'
 
       # A URL to the main website for this project.
-      ProjectUri = 'https://github.com/deadlydog/Template.PowerShell.ScriptModule'
+      ProjectUri = 'https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate'
 
       # A URL to an icon representing this module.
       # IconUri = ''
 
       # ReleaseNotes of this module
-      ReleaseNotes = 'Changelog: https://github.com/deadlydog/Template.PowerShell.ScriptModule/blob/main/Changelog.md'
+      ReleaseNotes = 'Changelog: https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate/blob/main/Changelog.md'
 
       # Prerelease string of this module
       # Prerelease = ''

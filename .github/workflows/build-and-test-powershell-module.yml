@@ -31,8 +31,8 @@ on:
         value: ${{ jobs.build-and-test.outputs.deployFilesArtifactName }}
 
 env:
-  powerShellModuleName: 'Template.PowerShell.ScriptModule'
-  powerShellModuleDirectoryPath: './src/Template.PowerShell.ScriptModule'
+  powerShellModuleName: 'ScriptModuleRepositoryTemplate'
+  powerShellModuleDirectoryPath: './src/ScriptModuleRepositoryTemplate'
   deployFilesDirectoryPath: './deploy'
   prereleaseModuleArtifactName: 'PrereleaseModuleArtifact'
   prereleaseModuleArtifactDirectoryPath: './artifacts/Prerelease'

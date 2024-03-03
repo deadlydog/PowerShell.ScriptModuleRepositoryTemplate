@@ -1,4 +1,4 @@
-using module './Template.PowerShell.ScriptModule.psm1'
+using module './ScriptModuleRepositoryTemplate.psm1'
 
 Describe 'New-PowerShellScriptModuleRepository' {
 	It 'Should create a new directory with the module repository files' {

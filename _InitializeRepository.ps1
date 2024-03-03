@@ -17,7 +17,7 @@ If you have made changes to any files you may want to commit them before continu
 	Write-Information "Creating the template repository files."
 	Import-Module -Name $TemplateModuleDirectoryPath -Force
 	New-PowerShellScriptModuleRepository -RepositoryDirectoryPath $RepositoryDirectoryPath -ModuleName $moduleName -OrganizationName $organizationName
-	Remove-Module -Name Template.PowerShell.ScriptModule -Force
+	Remove-Module -Name ScriptModuleRepositoryTemplate -Force
 
 	Write-Information "Removing the template module files since we are done using it to create the template repository files."
 	Remove-TemplateModuleFiles -templateModuleDirectoryPath $TemplateModuleDirectoryPath
@@ -29,7 +29,7 @@ Begin
 {
 	$InformationPreference = 'Continue'
 	[string] $RepositoryDirectoryPath = Resolve-Path -Path $PSScriptRoot
-	[string] $TemplateModuleDirectoryPath = "$RepositoryDirectoryPath\src\Template.PowerShell.ScriptModule"
+	[string] $TemplateModuleDirectoryPath = "$RepositoryDirectoryPath\src\ScriptModuleRepositoryTemplate"
 
 	function Remove-AllRepositoryFilesExceptTemplateModuleFiles([string] $repositoryDirectoryPath)
 	{
