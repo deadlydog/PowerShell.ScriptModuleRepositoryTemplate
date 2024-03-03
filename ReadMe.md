@@ -2,11 +2,11 @@
 
 🚧 This repo is still a work in progress and not yet ready to be used 🚧
 
-A template repository to create new PowerShell modules quickly with boilerplate files and CI/CD workflows already defined.
+A template repository and module for creating new PowerShell module repos quickly with boilerplate files and CI/CD workflows already defined.
 
 ## ✨ Features
 
-Use this template for your new git repository to get the following features out-of-the-box:
+Use this template/module for your new git repository to get the following features out-of-the-box:
 
 - GitHub Actions workflows or Azure DevOps Pipelines YAML files that:
   - Publish a prerelease version on every commit to the `main` branch, and a stable version once manually approved.
@@ -21,10 +21,41 @@ Use this template for your new git repository to get the following features out-
 - A `.devcontainer` for use with Visual Studio Code's [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and [GitHub Codespaces](https://github.com/features/codespaces).
 - Boilerplate repository files, such as ReadMe, License, Changelog, .gitignore, .editorconfig, PR and Issue templates, and more.
 
-## 📄 Template setup instructions
+## 🚀 Get started
 
-Use this template to create a new repository for your PowerShell module.
-Follow the instructions below to get started.
+There are two ways to create your new PowerShell module repository:
+
+1. Use the `New-PowerShellScriptModuleRepository` cmdlet to create a new repository, or
+1. Create a new repository from this template in GitHub.
+
+Both of these methods are described in more detail below.
+
+Once the repository is created, follow the instructions in the repo's ReadMe file to complete the setup.
+The non-transformed instructions can also be [viewed here](/src/Template.PowerShell.ScriptModule/TemplateRepoFiles/ReadMe.md).
+
+## 📂 Method 1: Use the New-PowerShellScriptModuleRepository cmdlet
+
+Step 1: Install the `Template.PowerShell.ScriptModule` module from the PowerShell Gallery:
+
+```powershell
+Install-Module -Name Template.PowerShell.ScriptModule -Scope CurrentUser
+```
+
+Step 2: Create the new repository files:
+
+```powershell
+New-PowerShellScriptModuleRepository -RepositoryDirectoryPath 'C:\MyModuleName' -ModuleName 'MyModuleName' -OrganizationName 'My Name'
+```
+
+The above command will create a new directory at `C:\MyModuleName` with the boilerplate files and workflows for publishing your module already set up.
+
+You can then perform a `git init` in that directory and push it to where you want your git repository hosted (e.g. Azure DevOps or GitHub).
+
+To complete the setup, follow the instructions in the repo's ReadMe file.
+
+## 📄 Method 2: Create repository from GitHub template
+
+If you repository will be hosted on GitHub, you can follow the steps below:
 
 ### 🗍 Step 1: Create a new repo from this template
 
@@ -32,7 +63,7 @@ The official docs for creating a new repository from a template can [be found he
 In short, the steps are:
 
 1. Click the `Use this template` button at the top of the repository and choose `Create a new repository`.
-1. Name your new repository (including your module name is a good idea) and give it a description.
+1. Name your new repository (including your module's name is a good idea) and give it a description.
 1. Click the `Create repository` button.
 1. You should now have the new repository in your account with the name you chose.
 1. Clone your new repository to your local machine to start making changes to it.
@@ -40,20 +71,32 @@ In short, the steps are:
 ### 🤖 Step 2: Replace repo template information
 
 Run the [_InitializeRepository.ps1](/_InitializeRepository.ps1) script to update the repository files with your module's information.
-You will be prompted to enter the following information:
+You will be prompted to enter some information, such as:
 
 - Your module's name (no spaces)
 - Your name or organization name (may contain spaces)
 
-Once the script completes, most of the repo files will be replaced and there will be some additional steps to follow in the [new ReadMe file](/src/Template.PowerShell.ScriptModule/TemplateRepoFiles/ReadMe.md) that replaces this one.
+Once the script completes, most of the repo files will be replaced.
+You should commit the changes.
+
+To complete the setup, follow the instructions in the repo's new ReadMe file (that replaced this one).
 
 ## 📋 Create your own template (optional)
 
-Now that you have the repository looking the way you want, you may want to use it as a template for your future modules so that you don't have to make all of the same changes each time.
-In GitHub, from the repo's `Settings` tab under the `General` section, you can rename the repository to reflect that it is a template and check the box to make it a `Template repository`.
+Not happy with some of the default template configurations?
+Maybe you don't like the .editorconfig settings, or want it to publish to your own internal PowerShell Gallery feed by default?
+You can derive your own template from this repository and use it for your future modules, minimizing the custom changes you need to make every time you create a new repo.
 
-The caveat here is you have already ran the script that updated the repository files with your module's name and other information.
-In your template repo, you would want to add instructions to do a find-and-replace on the repository files to update the module's name, and any other information you want changed for new modules created from your template.
+To create your own template:
+
+1. Fork [this repository on GitHub](https://github.com/deadlydog/Template.PowerShell.ScriptModule).
+1. In GitHub, from your repo's `Settings` tab under the `General` section, rename the repository to reflect that it is a template and check the box to make it a `Template repository`.
+1. Modify [the template repo files](/src/Template.PowerShell.ScriptModule/TemplateRepoFiles/) with whatever customizations you want.
+1. If you are introducing more replacement tokens in the files, you will need to update the `Set-TemplateTokenValuesInAllRepositoryFiles` function in the [Template.PowerShell.ScriptModule.psm1](/src/Template.PowerShell.ScriptModule/Template.PowerShell.ScriptModule.psm1) file to handle them.
+
+You can now create new repositories from your GitHub template in the same way you would use this one.
+
+If you want to be able to create new repositories from a module, you will need to publish your module under a different name.
 
 ## ❤ Donate to support this template (optional)
 
