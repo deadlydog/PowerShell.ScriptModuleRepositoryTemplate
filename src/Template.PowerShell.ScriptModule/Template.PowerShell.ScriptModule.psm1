@@ -1,26 +1,45 @@
-# This is just example code. Run the _InitializeRepository.ps1 script to replace this file with your module.
-
-function Get-TemplateDescription
-{
-	[CmdletBinding()]
-	Param ()
-
-	[string] $description = @'
-This module is part of a template git repository that you can use to create new PowerShell script module repos quickly and easily with boilerplate files and CI/CD workflows already defined.
-
-For more information, visit the repository at https://github.com/deadlydog/Template.PowerShell.ScriptModule.
-'@
-
-	Write-Output $description
-}
-
 function New-PowerShellScriptModuleRepository
 {
+<#
+	.SYNOPSIS
+		Creates a new PowerShell script module repository directory with boilerplate files and CI/CD workflows already defined.
+
+	.DESCRIPTION
+		This function creates a new PowerShell script module repository with boilerplate files and CI/CD workflows already defined. This allows you to create new PowerShell script modules quickly and easily.
+
+		Once the directory is created, you can run `git init` in it to initialize it as a git repository, and then push it to your own git server.
+
+		You will then need to follow the instructions in the ReadMe.md file to finish setting up the repository.
+
+	.PARAMETER RepositoryDirectoryPath
+		The path to the new directory that should be created for the module repository.
+
+	.PARAMETER ModuleName
+		The name of the module to create.
+
+	.PARAMETER OrganizationName
+		The name of the individual or organization that owns the module.
+
+	.EXAMPLE
+		PS> New-PowerShellScriptModuleRepository -RepositoryDirectoryPath 'C:\MyNewModule' -ModuleName 'MyNewModule' -OrganizationName 'My Name'
+
+		Creates a new module repository at 'C:\MyNewModule' with the module name 'MyNewModule' and the organization name 'My Name'.
+
+	.INPUTS
+		None. You cannot pipe objects to New-PowerShellScriptModuleRepository.
+
+	.OUTPUTS
+		None. New-PowerShellScriptModuleRepository does not return any output.
+		It creates a new directory with the module repository files.
+
+	.LINK
+		https://github.com/deadlydog/Template.PowerShell.ScriptModule
+#>
 	[CmdletBinding()]
 	[Alias('New-PSRepository')]
 	Param
 	(
-		[Parameter(Mandatory = $true, HelpMessage = "The path to the directory where the module repository should be created.")]
+		[Parameter(Mandatory = $true, HelpMessage = "The path to the new directory that should be created for the module repository.")]
 		[ValidateNotNullOrEmpty()]
 		[string] $RepositoryDirectoryPath,
 
