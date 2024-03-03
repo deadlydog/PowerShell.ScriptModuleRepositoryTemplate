@@ -2,7 +2,9 @@
 
 > [!IMPORTANT]
 > Congratulations on initializing your repository! 🎉
+>
 > 🚧 You are not quite done yet though. 🚧
+>
 > Complete the following steps to finish setting up your repository.
 
 ## 📄 Template setup instructions
@@ -21,19 +23,19 @@ Otherwise, use these files as a starting point for your new module.
 
 ### 🚀 Step 4: Update your CI/CD workflows
 
-This template includes CI/CD workflows for building and publishing the PowerShell module using both GitHub Actions and Azure DevOps Pipelines.
-Follow the instructions for the CI/CD system you plan to use.
-
-#### Create a PowerShell Gallery API Key
+#### 🔑 Create a PowerShell Gallery API Key
 
 In order to publish the module to the gallery, you need to get an API key.
 If you already have an API key that you want to use, you can skip to the next step.
 
-> [!TIP]
+> [!CAUTION]
 > It is considered best practice to use a separate API key for each module you publish.
 > It reduces the impact scope if one of the API keys becomes compromised.
 
-To create a new API Key for the PowerShell Gallery:
+If you will be publishing the module to a custom PowerShell Gallery feed, you will need to get an API key for that feed. Otherwise, follow the steps below.
+
+<details>
+<summary>Click to view steps to create a new API Key for the PowerShell Gallery...</summary>
 
 1. Navigate to <https://www.powershellgallery.com/account/apikeys>, and login if necessary.
 1. Click `Create` to create a new API key for this module.
@@ -44,7 +46,15 @@ To create a new API Key for the PowerShell Gallery:
 1. Click the `Create` button to create the API key.
 1. Click the `Copy` button on the new API key to copy it to your clipboard, as you will need it for the next step.
 
-#### GitHub Actions
+</details>
+
+#### ▶ GitHub Actions and Azure DevOps Pipelines setup instructions
+
+Building and publishing the PowerShell module using GitHub Actions and Azure DevOps Pipelines are both supported.
+Follow the instructions for the CI/CD platform you plan to use.
+
+<details>
+<summary>Click to see GitHub setup instructions...</summary>
 
 If using GitHub Actions for your CI/CD workflows, perform the following steps to setup your API key as a repository secret:
 
@@ -67,9 +77,14 @@ Next we want to create an Environment so that stable module versions require man
 If your account does not meet [the requirements to use `Environments`](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment), the `Environments` section will not be available.
 You will instead need to use [the Manual Workflow Approval action](https://github.com/marketplace/actions/manual-workflow-approval).
 
-#### Azure DevOps Pipelines
+</details>
+
+<details>
+<summary>Click to see Azure DevOps setup instructions...</summary>
 
 Coming soon.
+
+</details>
 
 ### ✔ Step 5: Review and update boilerplate repo files
 
@@ -77,7 +92,7 @@ The following boilerplate git repository files should be reviewed and updated or
 
 - [__NewModuleName__.psd1](/src/__NewModuleName__/__NewModuleName__.psd1): Update the module manifest with your module's information.
 - [Changelog](/Changelog.md): If you don't plan to track a changelog, remove this file and it's reference from the ReadMe.
-- [License](/License.md): Update to match your module's license, and ensure it uses the correct name in the copyright.
+- [License](/License.md): Update to match your module's license, and ensure it uses the correct name and year in the copyright.
 - [Contributing](/docs/Contributing.md): Update to match your module's contributing guidelines, or remove it.
 - [bug_report](/.github/ISSUE_TEMPLATE/bug_report.md), [feature_request](/.github/ISSUE_TEMPLATE/feature_request.md), [pull_request_template](/.github/pull_request_template.md): Update these GitHub templates as needed to meet your requirements, or remove them.
 - Build and deployment workflows: The workflows include extra steps that you may not want, such as spell check, code coverage, etc.

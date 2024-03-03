@@ -6,7 +6,7 @@ A template repository and module for creating new PowerShell module repos quickl
 
 ## ✨ Features
 
-Use this template/module for your new git repository to get the following features out-of-the-box:
+Use this template or module for your new git repository to get the following features out-of-the-box:
 
 - GitHub Actions workflows or Azure DevOps Pipelines YAML files that:
   - Publish a prerelease version on every commit to the `main` branch, and a stable version once manually approved.
