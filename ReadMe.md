@@ -33,7 +33,7 @@ Both of these methods are described in more detail below.
 Once the repository is created, follow the instructions in the repo's ReadMe file to complete the setup.
 The non-transformed instructions can also be [viewed here](/src/ScriptModuleRepositoryTemplate/TemplateRepoFiles/ReadMe.md).
 
-## 📂 Method 1: Use the New-PowerShellScriptModuleRepository cmdlet
+### 📂 Method 1: Use the New-PowerShellScriptModuleRepository cmdlet
 
 Step 1: Install the `ScriptModuleRepositoryTemplate` module from the PowerShell Gallery:
 
@@ -53,11 +53,11 @@ You can then perform a `git init` in that directory and push it to where you wan
 
 To complete the setup, follow the instructions in the repo's ReadMe file.
 
-## 📄 Method 2: Create repository from GitHub template
+### 📄 Method 2: Create repository from GitHub template
 
 If you repository will be hosted on GitHub, you can follow the steps below:
 
-### 🗍 Step 1: Create a new repo from this template
+#### 🗍 Step 1: Create a new repo from this template
 
 The official docs for creating a new repository from a template can [be found here](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 In short, the steps are:
@@ -68,7 +68,7 @@ In short, the steps are:
 1. You should now have the new repository in your account with the name you chose.
 1. Clone your new repository to your local machine to start making changes to it.
 
-### 🤖 Step 2: Replace repo template information
+#### 🤖 Step 2: Replace repo template information
 
 Run the [_InitializeRepository.ps1](/_InitializeRepository.ps1) script to update the repository files with your module's information.
 You will be prompted to enter some information, such as:
