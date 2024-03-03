@@ -51,11 +51,11 @@ The above command will create a new directory at `C:\MyModuleName` with the boil
 
 You can then perform a `git init` in that directory and push it to where you want your git repository hosted (e.g. Azure DevOps or GitHub).
 
-To complete the setup, follow the instructions in the repo's ReadMe file.
+To complete the setup, follow the instructions in the module repo's ReadMe file.
 
 ### 📄 Method 2: Create repository from GitHub template
 
-If you repository will be hosted on GitHub, you can follow the steps below:
+If your repository will be hosted on GitHub, you can follow the steps below:
 
 #### 🗍 Step 1: Create a new repo from this template
 
