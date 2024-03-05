@@ -95,8 +95,9 @@ jobs:
         with:
           paths: code-coverage-jacoco.xml
           token: ${{ secrets.GITHUB_TOKEN }}
-          min-coverage-overall: 60
-          min-coverage-changed-files: 60
+          # If you want to fail the build if the coverage is below a certain threshold, you can use the following options.
+          # min-coverage-overall: 60
+          # min-coverage-changed-files: 60
 
       - name: Determine new version from Git tag and set environment variables
         shell: pwsh
