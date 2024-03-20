@@ -15,6 +15,7 @@
 		"Codespace", // GitHub Codespaces
 		"Codespaces", // GitHub Codespaces
 		"devcontainer", // VS Code devcontainer
+		"gittools", // GitHub action author
 		"Hmmss", // Time format
 		"jacoco", // Java code coverage
 		"madrapps", // GitHub action author
