@@ -103,6 +103,7 @@ jobs:
           "majorMinorPatch=$newVersionNumber" | Out-File -FilePath $Env:GITHUB_OUTPUT -Encoding utf8 -Append
           "prereleaseLabel=$newVersionNumberPrereleaseLabel" | Out-File -FilePath $Env:GITHUB_OUTPUT -Encoding utf8 -Append
 
+      # Suppress rules if needed: https://learn.microsoft.com/en-us/powershell/utility-modules/psscriptanalyzer/using-scriptanalyzer
       - name: Run PowerShell linter with PSScriptAnalyzer
         shell: pwsh
         run: Invoke-ScriptAnalyzer -Path . -Recurse -EnableExit
