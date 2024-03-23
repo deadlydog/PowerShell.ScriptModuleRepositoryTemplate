@@ -109,9 +109,9 @@ Buy me a hot apple cider for providing this template open source and for free ðŸ
 Things to still do:
 
 - Allow using a custom PowerShell Gallery feed URL.
-- Create new deployment on tag creation maybe
+- Create new deployment on tag creation maybe.
 - Add instructions for how to assign version number in the contributing docs depending on if they are using actions or pipelines
-- Prompt user for module name, org name, pipelines or actions, PowerShell gallery or custom feed with an option to leave it blank to - fill it in later
+- Prompt user for module name, org name, pipelines or actions, PowerShell gallery or custom feed with an option to leave it blank to fill it in later.
 - Make azure DevOps and GitHub steps in the ReadMe collapsible.
   Have screenshots and link to recording of the setup in both, since they involve clicking around in the UI.
   Perhaps link to [this tutorial](https://dev.to/olalekan_oladiran_d74b7a6/how-to-enable-continuous-integration-with-azure-pipelines-1doi)?
