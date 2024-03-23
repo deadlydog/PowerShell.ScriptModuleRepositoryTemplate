@@ -1,0 +1,50 @@
+name: ✨ Feature request
+description: Suggest an idea for this project
+title: "Feature Request: <title>"
+labels: ["enhancement"]
+body:
+- type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please search to see if a feature request already exists for what you are suggesting.
+    options:
+    - label: I have searched the existing issues
+      required: true
+- type: textarea
+  attributes:
+    label: Problem to solve
+    description: Is your feature request related to a problem? Please describe.
+    placeholder: |
+      Ex. I'm always frustrated when '...'.
+      Ex. I want to be able to '...'.
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Summary
+    description: Describe the solution you'd like.
+    placeholder: |
+      A clear and concise description of what you want to happen.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Alternative solutions
+    description: Describe any alternative solutions you've considered that may address the issue.
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Visuals
+    description: If applicable, add screenshots, gifs, or videos to help explain the feature you are requesting.
+    placeholder: |
+      Here is a mockup of the feature I am suggesting:
+      ![Screenshot](https://example.com/screenshot.png)
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Anything else?
+    description: Add any other context or information about the feature request here.
+  validations:
+    required: false

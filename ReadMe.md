@@ -117,7 +117,6 @@ Things to still do:
   Perhaps link to [this tutorial](https://dev.to/olalekan_oladiran_d74b7a6/how-to-enable-continuous-integration-with-azure-pipelines-1doi)?
 - In the ReadMe setup instructions or above, have a sentence or two explaining the layout of the ReadMe, or maybe a table of contents
 - Add some badges as well to the ReadMe.
-- Look at improving GitHub issue and PR templates: https://raw.githubusercontent.com/PowerShell/vscode-powershell/main/.github/ISSUE_TEMPLATE/bug-report.yml
 - To prevent having to store CI/CD manual setup images in the repo, maybe have them as an external link to a GitHub branch.
   - Also create videos showing how to do the setup.
 - Maybe show instructions for setting up GitHub / Azure DevOps CI/CD during the initialization script. Or mention to follow the ReadMe instructions.
