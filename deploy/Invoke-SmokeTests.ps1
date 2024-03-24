@@ -16,7 +16,7 @@ BeforeAll {
 Describe 'New-PowerShellScriptModuleRepository' {
 	It 'Should create a new directory with the module repository files' {
 		# Arrange.
-		$repositoryDirectoryPath = "$TestDrive\NewModule"
+		$repositoryDirectoryPath = "$TestDrive\NewModuleRepo"
 		$moduleName = 'NewModule'
 		$organizationName = 'My Organization'
 
@@ -27,6 +27,10 @@ Describe 'New-PowerShellScriptModuleRepository' {
 
 		# Act.
 		New-PowerShellScriptModuleRepository -RepositoryDirectoryPath $repositoryDirectoryPath -ModuleName $moduleName -OrganizationName $organizationName -Verbose
+
+		Write-Output "Module directory path: $repositoryDirectoryPath"
+		Get-ChildItem -Path $repositoryDirectoryPath -Recurse |
+			Select-Object -ExpandProperty FullName
 
 		# Assert.
 		$expectedModuleDirectoryPath | Should -Exist
