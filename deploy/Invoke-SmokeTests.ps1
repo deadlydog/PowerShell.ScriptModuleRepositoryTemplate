@@ -28,9 +28,10 @@ Describe 'New-PowerShellScriptModuleRepository' {
 		# Act.
 		New-PowerShellScriptModuleRepository -RepositoryDirectoryPath $repositoryDirectoryPath -ModuleName $moduleName -OrganizationName $organizationName -Verbose
 
-		Write-Output "Module directory path: $repositoryDirectoryPath"
-		Get-ChildItem -Path $repositoryDirectoryPath -Recurse |
+		Write-Verbose "Module directory path: $repositoryDirectoryPath" -Verbose
+		$paths = Get-ChildItem -Path $repositoryDirectoryPath -Recurse |
 			Select-Object -ExpandProperty FullName
+		Write-Verbose "Paths: $paths" -Verbose
 
 		# Assert.
 		$expectedModuleDirectoryPath | Should -Exist
