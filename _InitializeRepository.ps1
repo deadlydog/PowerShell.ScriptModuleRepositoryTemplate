@@ -1,8 +1,13 @@
-# Run this script to replace the default template repository values with values specific to your module.
+# Run this script to setup the repository for your module.
+
+[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingWriteHost', '')]
+[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
+[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
+Param()
 
 Process
 {
-	Write-Host -ForegroundColor Green "
+	Write-Host -ForegroundColor Yellow "
 This script will delete all files in this repo and replace them with template files specific to your module.
 If you have made changes to any files you may want to commit them before continuing, as this script will likely overwrite them.
 "
