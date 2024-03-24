@@ -19,6 +19,7 @@
 		"Hmmss", // Time format
 		"jacoco", // Java code coverage
 		"madrapps", // GitHub action author
+		"nupkg", // NuGet package
 		"nunit", // .NET unit testing framework
 		"pwsh" // PowerShell Core
 	]
