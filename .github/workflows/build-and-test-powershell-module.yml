@@ -163,7 +163,7 @@ jobs:
           [string] $moduleTemplateFilesDirectoryPath = Join-Path -Path $moduleDirectoryPath -ChildPath 'TemplateFiles'
           [string] $moduleArtifactTemplateFilesDirectoryPath = Join-Path -Path $moduleArtifactDirectoryPath -ChildPath 'TemplateFiles'
           Write-Output "Copying the module template test files to the module artifact directory '$moduleArtifactTemplateFilesDirectoryPath'."
-          Copy-Item -Path $moduleTemplateFilesDirectoryPath -Destination $moduleArtifactTemplateFilesDirectoryPath -Include '*.Tests.ps1' -Recurse -Force
+          Copy-Item -Path $moduleTemplateFilesDirectoryPath\* -Destination $moduleArtifactTemplateFilesDirectoryPath -Include '*.Tests.ps1' -Recurse -Force -Container
 
       - name: Create deploy files artifact
         shell: pwsh
