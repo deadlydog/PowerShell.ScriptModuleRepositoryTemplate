@@ -4,7 +4,7 @@ using module './__NewModuleName__.psm1'
 Describe 'Get-HelloWorld' {
 	It 'Should return "Hello, World!"' {
 		$expected = 'Hello, World!'
-		$result = Get-TemplateDescription
+		$result = Get-HelloWorld
 		$result | Should -Be $expected
 	}
 }
