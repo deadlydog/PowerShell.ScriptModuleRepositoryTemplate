@@ -26,7 +26,7 @@ Describe 'New-PowerShellScriptModuleRepository' {
 		$expectedModuleTestsFilePath = Join-Path -Path $expectedModuleDirectoryPath -ChildPath "$moduleName.Tests.ps1"
 
 		# Act.
-		New-PowerShellScriptModuleRepository -RepositoryDirectoryPath $repositoryDirectoryPath -ModuleName $moduleName -OrganizationName $organizationName
+		New-PowerShellScriptModuleRepository -RepositoryDirectoryPath $repositoryDirectoryPath -ModuleName $moduleName -OrganizationName $organizationName -Verbose
 
 		# Assert.
 		$expectedModuleDirectoryPath | Should -Exist

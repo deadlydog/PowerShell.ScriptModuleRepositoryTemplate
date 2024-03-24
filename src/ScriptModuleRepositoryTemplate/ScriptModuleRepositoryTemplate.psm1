@@ -68,6 +68,7 @@ function CopyTemplateFilesToRepositoryRoot([string] $repositoryDirectoryPath)
 	[string] $templateModuleDirectoryPath = "$PSScriptRoot\TemplateRepoFiles"
 	if (Test-Path -Path $templateModuleDirectoryPath -PathType Container)
 	{
+		Write-Verbose "Copying the template repository files from '$templateModuleDirectoryPath' to the repository directory '$repositoryDirectoryPath'."
 		Copy-Item -Path $templateModuleDirectoryPath\* -Destination $repositoryDirectoryPath -Recurse -Force
 	}
 }
