@@ -157,8 +157,13 @@ jobs:
           Write-Output "Testing the module manifest file '$moduleManifestFilePath' to ensure it is valid."
           Test-ModuleManifest -Path $moduleManifestFilePath
 
-          Write-Output "Copying the module files to the module artifact directory '$moduleArtifactDirectoryPath'."
+          Write-Output "Copying the module files to the module artifact directory '$moduleArtifactDirectoryPath', excluding tests."
           Copy-Item -Path $moduleDirectoryPath -Destination $moduleArtifactDirectoryPath -Exclude '*.Tests.ps1' -Recurse -Force
+
+          [string] $moduleTemplateFilesDirectoryPath = Join-Path -Path $moduleDirectoryPath -ChildPath 'TemplateFiles'
+          [string] $moduleArtifactTemplateFilesDirectoryPath = Join-Path -Path $moduleArtifactDirectoryPath -ChildPath 'TemplateFiles'
+          Write-Output "Copying the module template test files to the module artifact directory '$moduleArtifactTemplateFilesDirectoryPath'."
+          Copy-Item -Path $moduleTemplateFilesDirectoryPath -Destination $moduleArtifactTemplateFilesDirectoryPath -Include '*.Tests.ps1' -Recurse -Force
 
       - name: Create deploy files artifact
         shell: pwsh
