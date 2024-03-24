@@ -35,7 +35,7 @@ function New-PowerShellScriptModuleRepository
 	.LINK
 		https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate
 #>
-	[CmdletBinding()]
+	[CmdletBinding(SupportsShouldProcess = $true)]
 	[Alias('New-PSRepository')]
 	Param
 	(
