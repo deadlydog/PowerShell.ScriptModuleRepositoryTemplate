@@ -67,6 +67,14 @@ If using GitHub Actions for your CI/CD workflows, perform the following steps to
 1. Set the `Name` to: `POWERSHELL_GALLERY_API_KEY`
 1. Set the `Secret` to the API key value that you copied in the previous section.
 
+If you do not provide a valid API key, you will get an error like the following in the `Publish prerelease PowerShell module` step of the deployment workflow:
+
+```text
+Failed to publish module '<module name>': 'dotnet cli failed to nuget push Pushing <module name>.nupkg to '<url>'...
+PUT <url> Forbidden
+error: Response status code does not indicate success: 403 (The specified API key is invalid, has expired, or does not have permission to access the specified package.).
+```
+
 Next we want to create an Environment so that stable module versions require manual approval before being published to the gallery:
 
 1. You should still be in the `Settings` section of your repository.
