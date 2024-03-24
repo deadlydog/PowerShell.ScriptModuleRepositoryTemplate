@@ -80,6 +80,19 @@ Next we want to create an Environment so that stable module versions require man
 If your GitHub account does not meet [the requirements to use `Environments`](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment), the `Environments` section will not be available.
 You will instead need to add [the Manual Workflow Approval action](https://github.com/marketplace/actions/manual-workflow-approval) to [the deployment workflow](/.github/workflows/build-test-and-deploy-powershell-module.yml) to block deployments until they are approved.
 
+Finally, we will need to grant GitHub Actions permission to add git tags to the repository so it can keep track of the version number:
+
+1. You should still be in the `Settings` section of your repository.
+1. In the left-hand menu, in the `Code and automation` section, click on `Actions` and select `General`.
+1. Scroll down to `Workflow permissions` and ensure `Read and write permissions` is selected.
+1. Click the `Save` button.
+
+If you do not do this you will get the following error in the `Set the new version tag` step of the deployment workflow:
+
+```text
+fatal: unable to access 'https://github.com/<Author>/<Repo>/': The requested URL returned error: 403
+```
+
 </details>
 
 <details>
