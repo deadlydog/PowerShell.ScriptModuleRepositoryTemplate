@@ -35,7 +35,7 @@ function New-PowerShellScriptModuleRepository
 	.LINK
 		https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate
 #>
-	[CmdletBinding(SupportsShouldProcess = $true)]
+	[CmdletBinding(SupportsShouldProcess)]
 	[Alias('New-PSRepository')]
 	Param
 	(
@@ -52,12 +52,12 @@ function New-PowerShellScriptModuleRepository
 		[string] $OrganizationName
 	)
 
-	Copy-TemplateFilesToRepositoryRoot -repositoryDirectoryPath $RepositoryDirectoryPath
-	Set-ModuleFileNames -repositoryDirectoryPath $RepositoryDirectoryPath -moduleName $ModuleName
-	Set-TemplateTokenValuesInAllRepositoryFiles -repositoryDirectoryPath $RepositoryDirectoryPath -moduleName $ModuleName -organizationName $OrganizationName
+	CopyTemplateFilesToRepositoryRoot -repositoryDirectoryPath $RepositoryDirectoryPath
+	SetModuleFileNames -repositoryDirectoryPath $RepositoryDirectoryPath -moduleName $ModuleName
+	SetTemplateTokenValuesInAllRepositoryFiles -repositoryDirectoryPath $RepositoryDirectoryPath -moduleName $ModuleName -organizationName $OrganizationName
 }
 
-function Copy-TemplateFilesToRepositoryRoot([string] $repositoryDirectoryPath)
+function CopyTemplateFilesToRepositoryRoot([string] $repositoryDirectoryPath)
 {
 	if (-not (Test-Path -Path $repositoryDirectoryPath -PathType Container))
 	{
@@ -72,7 +72,7 @@ function Copy-TemplateFilesToRepositoryRoot([string] $repositoryDirectoryPath)
 	}
 }
 
-function Set-ModuleFileNames([string] $repositoryDirectoryPath, [string] $moduleName)
+function SetModuleFileNames([string] $repositoryDirectoryPath, [string] $moduleName)
 {
 	[string] $moduleDirectoryPath = "$repositoryDirectoryPath\src\__NewModuleName__"
 	[string] $moduleFilePath = "$moduleDirectoryPath\__NewModuleName__.psm1"
@@ -101,7 +101,7 @@ function Set-ModuleFileNames([string] $repositoryDirectoryPath, [string] $module
 	}
 }
 
-function Set-TemplateTokenValuesInAllRepositoryFiles([string] $repositoryDirectoryPath, [string] $moduleName, [string] $organizationName)
+function SetTemplateTokenValuesInAllRepositoryFiles([string] $repositoryDirectoryPath, [string] $moduleName, [string] $organizationName)
 {
 	$repositoryFiles = Get-ChildItem -Path $repositoryDirectoryPath -Recurse -File
 	foreach ($file in $repositoryFiles)

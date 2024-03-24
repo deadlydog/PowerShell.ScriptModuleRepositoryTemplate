@@ -1,8 +1,6 @@
 # Run this script to setup the repository for your module.
 
 [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingWriteHost', '')]
-[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
-[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
 Param()
 
 Process
@@ -17,7 +15,7 @@ If you have made changes to any files you may want to commit them before continu
 	[string] $organizationName = Read-Host -Prompt "Enter your name, or the the name of your organization (e.g. 'My Company'). This will be used in the module manifest and repository license"
 
 	Write-Information "Removing all files from this repository so they can be replaced with template repository files."
-	Remove-AllRepositoryFilesExceptTemplateModuleFiles -repositoryDirectoryPath $RepositoryDirectoryPath
+	RemoveAllRepositoryFilesExceptTemplateModuleFiles -repositoryDirectoryPath $RepositoryDirectoryPath
 
 	Write-Information "Creating the template repository files."
 	Import-Module -Name $TemplateModuleDirectoryPath -Force
@@ -25,7 +23,7 @@ If you have made changes to any files you may want to commit them before continu
 	Remove-Module -Name ScriptModuleRepositoryTemplate -Force
 
 	Write-Information "Removing the template module files since we are done using it to create the template repository files."
-	Remove-TemplateModuleFiles -templateModuleDirectoryPath $TemplateModuleDirectoryPath
+	RemoveTemplateModuleFiles -templateModuleDirectoryPath $TemplateModuleDirectoryPath
 
 	Write-Host -ForegroundColor Green "Repo initialization complete. You can now commit the changes to your repository."
 }
@@ -36,7 +34,7 @@ Begin
 	[string] $RepositoryDirectoryPath = Resolve-Path -Path $PSScriptRoot
 	[string] $TemplateModuleDirectoryPath = "$RepositoryDirectoryPath\src\ScriptModuleRepositoryTemplate"
 
-	function Remove-AllRepositoryFilesExceptTemplateModuleFiles([string] $repositoryDirectoryPath)
+	function RemoveAllRepositoryFilesExceptTemplateModuleFiles([string] $repositoryDirectoryPath)
 	{
 		# Delete all files except the ones we want to keep.
 		Get-ChildItem -Path $repositoryDirectoryPath -Recurse -File |
@@ -54,7 +52,7 @@ Begin
 			Remove-Item -Force
 	}
 
-	function Remove-TemplateModuleFiles([string] $templateModuleDirectoryPath)
+	function RemoveTemplateModuleFiles([string] $templateModuleDirectoryPath)
 	{
 		if (Test-Path -Path $templateModuleDirectoryPath -PathType Container)
 		{
