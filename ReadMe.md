@@ -1,3 +1,5 @@
+🚧 This repo is still a work in progress and not yet ready to be used 🚧
+
 <p align="center">
   <a href="https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate/actions/workflows/build-and-test-powershell-module.yml"><img alt="Build status" src="https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate/actions/workflows/build-and-test-powershell-module.yml/badge.svg"></a>
   <a href="https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate/actions/workflows/build-test-and-deploy-powershell-module.yml"><img alt="Deploy status" src="https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate/actions/workflows/build-test-and-deploy-powershell-module.yml/badge.svg"></a>
@@ -18,8 +20,6 @@
 </p>
 
 # PowerShell Script Module Repository Template
-
-🚧 This repo is still a work in progress and not yet ready to be used 🚧
 
 A template repository and module for creating new PowerShell module repos quickly with boilerplate files and CI/CD workflows already defined.
 
