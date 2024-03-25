@@ -26,12 +26,7 @@ Describe 'New-PowerShellScriptModuleRepository' {
 		$expectedModuleTestsFilePath = Join-Path -Path $expectedModuleDirectoryPath -ChildPath "$moduleName.Tests.ps1"
 
 		# Act.
-		New-PowerShellScriptModuleRepository -RepositoryDirectoryPath $repositoryDirectoryPath -ModuleName $moduleName -OrganizationName $organizationName -Verbose
-
-		Write-Verbose "Module directory path: $repositoryDirectoryPath" -Verbose
-		$paths = Get-ChildItem -Path $repositoryDirectoryPath -Recurse |
-			Select-Object -ExpandProperty FullName
-		Write-Verbose "Paths: $paths" -Verbose
+		New-PowerShellScriptModuleRepository -RepositoryDirectoryPath $repositoryDirectoryPath -ModuleName $moduleName -OrganizationName $organizationName
 
 		# Assert.
 		$expectedModuleDirectoryPath | Should -Exist
