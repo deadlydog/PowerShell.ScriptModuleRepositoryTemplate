@@ -1,3 +1,22 @@
+<p align="center">
+  <a href="https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate/actions/workflows/build-and-test-powershell-module.yml"><img alt="Build status" src="https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate/actions/workflows/build-and-test-powershell-module.yml/badge.svg"></a>
+  <a href="https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate/actions/workflows/build-test-and-deploy-powershell-module.yml"><img alt="Deploy status" src="https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate/actions/workflows/build-test-and-deploy-powershell-module.yml/badge.svg"></a>
+  <a href="https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate/blob/main/License.md"><img alt="License" src="https://img.shields.io/github/license/deadlydog/PowerShell.ScriptModuleRepositoryTemplate.svg"></a>
+  <a href="https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate/blob/main/docs/Contributing.md"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
+</p>
+
+<p align="center">
+  <a href="https://www.powershellgallery.com/packages/ScriptModuleRepositoryTemplate"><img alt="Stable PowerShell module version" src="https://img.shields.io/powershellgallery/v/ScriptModuleRepositoryTemplate.svg"></a>
+  <a href="https://www.powershellgallery.com/packages/ScriptModuleRepositoryTemplate"><img alt="Prerelease PowerShell module version" src="https://img.shields.io/powershellgallery/vpre/ScriptModuleRepositoryTemplate.svg?include_prereleases&label=powershell%20gallery%20prerelease&colorB=yellow"></a>
+  <a href="https://www.powershellgallery.com/packages/ScriptModuleRepositoryTemplate"><img src="https://img.shields.io/powershellgallery/dt/tiPS.svg"></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/powershellgallery/p/ScriptModuleRepositoryTemplate.svg">
+  <img src="https://img.shields.io/github/languages/top/deadlydog/PowerShell.ScriptModuleRepositoryTemplate.svg">
+  <img src="https://img.shields.io/github/languages/code-size/deadlydog/PowerShell.ScriptModuleRepositoryTemplate.svg">
+</p>
+
 # PowerShell Script Module Repository Template
 
 🚧 This repo is still a work in progress and not yet ready to be used 🚧
@@ -6,7 +25,7 @@ A template repository and module for creating new PowerShell module repos quickl
 
 ## ✨ Features
 
-Use this template or module for your new git repository to get the following features out-of-the-box:
+Use this repo template or module for your new git repository to get the following features out-of-the-box:
 
 - GitHub Actions workflows or Azure DevOps Pipelines YAML files that:
   - Publish a prerelease version on every commit to the `main` branch, and a stable version once manually approved.
@@ -35,7 +54,7 @@ The non-transformed instructions can also be [viewed here](/src/ScriptModuleRepo
 
 ### 📂 Method 1: Use the New-PowerShellScriptModuleRepository cmdlet
 
-Step 1: Install the `ScriptModuleRepositoryTemplate` module from the PowerShell Gallery:
+Step 1: Install the `ScriptModuleRepositoryTemplate` module [from the PowerShell Gallery](https://www.powershellgallery.com/packages/ScriptModuleRepositoryTemplate):
 
 ```powershell
 Install-Module -Name ScriptModuleRepositoryTemplate -Scope CurrentUser
