@@ -98,8 +98,10 @@ Checkout the template repository at https://github.com/deadlydog/PowerShell.Scri
       Tags = @(
         'PowerShell'
         'Module'
+        'Repository'
         'Template'
         'ScriptModule'
+        'Repo'
         'GitHub'
         'Actions'
         'AzureDevOps'
