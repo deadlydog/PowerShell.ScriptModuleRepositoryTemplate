@@ -8,7 +8,7 @@
 <p align="center">
   <a href="https://www.powershellgallery.com/packages/ScriptModuleRepositoryTemplate"><img alt="Stable PowerShell module version" src="https://img.shields.io/powershellgallery/v/ScriptModuleRepositoryTemplate.svg"></a>
   <a href="https://www.powershellgallery.com/packages/ScriptModuleRepositoryTemplate"><img alt="Prerelease PowerShell module version" src="https://img.shields.io/powershellgallery/vpre/ScriptModuleRepositoryTemplate.svg?include_prereleases&label=powershell%20gallery%20prerelease&colorB=yellow"></a>
-  <a href="https://www.powershellgallery.com/packages/ScriptModuleRepositoryTemplate"><img src="https://img.shields.io/powershellgallery/dt/tiPS.svg"></a>
+  <a href="https://www.powershellgallery.com/packages/ScriptModuleRepositoryTemplate"><img src="https://img.shields.io/powershellgallery/dt/ScriptModuleRepositoryTemplate.svg"></a>
 </p>
 
 <p align="center">
