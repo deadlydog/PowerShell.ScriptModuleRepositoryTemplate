@@ -160,6 +160,10 @@ jobs:
           Write-Output "Copying the module files to the module artifact directory '$moduleArtifactDirectoryPath'."
           Copy-Item -Path $moduleDirectoryPath -Destination $moduleArtifactDirectoryPath -Exclude '*.Tests.ps1' -Recurse -Force
 
+          [string] $moduleTemplateRepoFilesDirectoryPath = Join-Path -Path $moduleDirectoryPath -ChildPath 'TemplateRepoFiles'
+          Write-Output "Copying the module template repo files '$moduleTemplateRepoFilesDirectoryPath' to the module artifact directory '$moduleArtifactDirectoryPath' verbatim, to ensure test files are included."
+          Copy-Item -Path $moduleTemplateRepoFilesDirectoryPath -Destination $moduleArtifactDirectoryPath -Recurse -Force
+
       - name: Create deploy files artifact
         shell: pwsh
         run: |
