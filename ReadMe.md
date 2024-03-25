@@ -63,10 +63,10 @@ Install-Module -Name ScriptModuleRepositoryTemplate -Scope CurrentUser
 Step 2: Create the new repository files:
 
 ```powershell
-New-PowerShellScriptModuleRepository -RepositoryDirectoryPath 'C:\MyModuleName' -ModuleName 'MyModuleName' -OrganizationName 'My Name'
+New-PowerShellScriptModuleRepository -RepositoryDirectoryPath 'C:\MyRepoName' -ModuleName 'MyModuleName' -OrganizationName 'My Name'
 ```
 
-The above command will create a new directory at `C:\MyModuleName` with the boilerplate files and workflows for publishing your module already set up.
+The above command will create a new directory at `C:\MyRepoName` with the boilerplate files and workflows for publishing your module already set up.
 
 You can then perform a `git init` in that directory and push it to where you want your git repository hosted (e.g. Azure DevOps or GitHub).
 
