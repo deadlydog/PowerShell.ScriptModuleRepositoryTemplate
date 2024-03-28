@@ -64,8 +64,9 @@ If using GitHub Actions for your CI/CD workflows, perform the following steps to
 1. Go to the `Settings` tab for your repository.
 1. In the left-hand menu, in the `Security` section, click on `Secrets and variables` and select `Actions`.
 1. In the `Secrets` tab click the `New repository secret` button.
+1. Set the `Secret` value to the API key value that you copied in the previous section.
 1. Set the `Name` to: `POWERSHELL_GALLERY_API_KEY`
-1. Set the `Secret` to the API key value that you copied in the previous section.
+1. Click the `Add secret` button to save the repository secret.
 
 If you do not provide a valid API key, you will get an error like the following in the `Publish prerelease PowerShell module` step of the deployment workflow:
 
@@ -78,11 +79,12 @@ error: Response status code does not indicate success: 403 (The specified API ke
 Next we want to create an Environment so that stable module versions require manual approval before being published to the gallery:
 
 1. You should still be in the `Settings` section of your repository.
-1. In the left-hand menu, in the `Environments` section, click on `Environments`.
+1. In the left-hand menu, in the `Code and automation` section, click on `Environments`.
 1. Click the `New environment` button.
 1. Set the `Name` to (all lowercase): `production`
 1. Click the `Configure environment` button.
 1. Check the `Required reviewers` checkbox and add the usernames of the people allowed to approve new stable version deployments.
+   e.g. your GitHub username.
 1. Click the `Save protection rules` button.
 
 If your GitHub account does not meet [the requirements to use `Environments`](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment), the `Environments` section will not be available.
@@ -94,7 +96,7 @@ Finally, we will need to grant GitHub Actions permission to add git tags to the 
 1. You should still be in the `Settings` section of your repository.
 1. In the left-hand menu, in the `Code and automation` section, click on `Actions` and select `General`.
 1. Scroll down to `Workflow permissions` and ensure `Read and write permissions` is selected.
-1. Click the `Save` button.
+1. Click the `Save` button for the Workflow permissions.
 
 If you do not do this you will get the following error in the `Set the new version tag` step of the deployment workflow:
 
@@ -127,7 +129,8 @@ The following boilerplate git repository files should be reviewed and updated or
 
 > [!IMPORTANT]
 > If you've made it this far, your repository is now ready for use! 🎉
-> You may delete this and all of the content above and commit any changes you've made.
+>
+> You may delete and all of this file's content above this message and commit any changes you've made.
 
 # __NewModuleName__ PowerShell Module
 
