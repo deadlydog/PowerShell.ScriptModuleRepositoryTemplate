@@ -14,7 +14,7 @@ If you have made changes to any files you may want to commit them before continu
 
 	[string] $organizationName = Read-Host -Prompt "Enter your name, or the the name of your organization (e.g. 'My Company'). This will be used in the module manifest and repository license"
 
-	Write-Information "Copying template repository module files to a temporary location."
+	Write-Information "Copying template repository module files to a temporary location to run it from."
 	[string] $tempModuleDirectoryPath = CopyTemplateModuleFilesToTempDirectory -templateModuleDirectoryPath $TemplateModuleDirectoryPath
 
 	Write-Information "Removing all files from this repository so they can be replaced with template repository files."
@@ -28,7 +28,7 @@ If you have made changes to any files you may want to commit them before continu
 	Write-Information "Removing the temporary template module files since we are done using it to create the template repository files."
 	RemoveTemporaryModuleDirectory -tempModuleDirectoryPath $tempModuleDirectoryPath
 
-	Write-Information "Starting external process to delete this script."
+	Write-Information "Deleting this script as it is no longer needed."
 	DeleteThisScript
 
 	Write-Host -ForegroundColor Green "Repo initialization complete. You can now commit the changes to your repository."
@@ -77,16 +77,6 @@ Begin
 	function DeleteThisScript
 	{
 		[string] $scriptPath = Join-Path -Path $PSScriptRoot -ChildPath '_InitializeRepository.ps1'
-		[string] $deleteCommand = "-ExecutionPolicy Bypass -NoProfile -Command `"Start-Sleep -Seconds 1; Remove-Item -Path '$scriptPath' -Force`""
-
-		$powerShellVersion = $PSVersionTable.PSVersion.Major
-		if ($powerShellVersion -le 5)
-		{
-			Invoke-Expression -Command "powershell $deleteCommand"
-		}
-		else
-		{
-			Invoke-Expression -Command "pwsh $deleteCommand"
-		}
+		Remove-Item -Path $scriptPath -Force
 	}
 }
