@@ -15,7 +15,7 @@ If you have made changes to any files you may want to commit them before continu
 	[string] $organizationName = Read-Host -Prompt "Enter your name, or the the name of your organization (e.g. 'My Company'). This will be used in the module manifest and repository license"
 
 	Write-Information "Copying template repository module files to a temporary location to run it from."
-	[string] $tempModuleDirectoryPath = CopyTemplateModuleFilesToTempDirectory -templateModuleDirectoryPath $TemplateModuleDirectoryPath
+	[string] $tempModuleDirectoryPath = CopyTemplateModuleFilesToTemporaryDirectory -templateModuleDirectoryPath $TemplateModuleDirectoryPath
 
 	Write-Information "Removing all files from this repository so they can be replaced with template repository files."
 	RemoveAllUnnecessaryRepositoryFiles -repositoryDirectoryPath $RepositoryDirectoryPath
@@ -41,7 +41,7 @@ Begin
 	[string] $TemplateModuleName = 'ScriptModuleRepositoryTemplate'
 	[string] $TemplateModuleDirectoryPath = "$RepositoryDirectoryPath\src\$TemplateModuleName"
 
-	function CopyTemplateModuleFilesToTempDirectory([string] $templateModuleDirectoryPath)
+	function CopyTemplateModuleFilesToTemporaryDirectory([string] $templateModuleDirectoryPath)
 	{
 		[string] $templateModuleName = Split-Path -Path $templateModuleDirectoryPath -Leaf
 		[string] $tempModuleDirectoryPath = [System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), (New-Guid).Guid, $templateModuleName)
