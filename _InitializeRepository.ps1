@@ -14,7 +14,7 @@ If you have made changes to any files you may want to commit them before continu
 
 	[string] $organizationName = Read-Host -Prompt "Enter your name, or the the name of your organization (e.g. 'My Company'). This will be used in the module manifest and repository license"
 
-	Write-Information "Copying template repository module files to a temporary location to run it from."
+	Write-Verbose "Copying template repository module files to a temporary location to run it from."
 	[string] $tempModuleDirectoryPath = CopyTemplateModuleFilesToTemporaryDirectory -templateModuleDirectoryPath $TemplateModuleDirectoryPath
 
 	Write-Information "Removing all files from this repository so they can be replaced with template repository files."
@@ -25,10 +25,10 @@ If you have made changes to any files you may want to commit them before continu
 	New-PowerShellScriptModuleRepository -RepositoryDirectoryPath $RepositoryDirectoryPath -ModuleName $moduleName -OrganizationName $organizationName
 	Remove-Module -Name $TemplateModuleName -Force
 
-	Write-Information "Removing the temporary template module files since we are done using it to create the template repository files."
+	Write-Verbose "Removing the temporary template module files since we are done using it to create the template repository files."
 	RemoveTemporaryModuleDirectory -tempModuleDirectoryPath $tempModuleDirectoryPath
 
-	Write-Information "Deleting this script as it is no longer needed."
+	Write-Verbose "Deleting this script as it is no longer needed."
 	DeleteThisScript
 
 	Write-Host -ForegroundColor Green "Repo initialization complete. You can now commit the changes to your repository."
