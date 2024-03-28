@@ -77,7 +77,6 @@ Begin
 	function DeleteThisScript
 	{
 		[string] $scriptPath = Join-Path -Path $PSScriptRoot -ChildPath '_InitializeRepository.ps1'
-		Write-Output "Script path to delete is: $scriptPath"
 		[string] $deleteCommand = "-ExecutionPolicy Bypass -NoProfile -Command `"Start-Sleep -Seconds 1; Remove-Item -Path '$scriptPath' -Force`""
 
 		$powerShellVersion = $PSVersionTable.PSVersion.Major
