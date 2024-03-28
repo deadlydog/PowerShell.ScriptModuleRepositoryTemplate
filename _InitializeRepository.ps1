@@ -14,16 +14,19 @@ If you have made changes to any files you may want to commit them before continu
 
 	[string] $organizationName = Read-Host -Prompt "Enter your name, or the the name of your organization (e.g. 'My Company'). This will be used in the module manifest and repository license"
 
+	Write-Information "Copying template repository module files to a temporary location."
+	[string] $tempModuleDirectoryPath = CopyTemplateModuleFilesToTempDirectory -templateModuleDirectoryPath $TemplateModuleDirectoryPath
+
 	Write-Information "Removing all files from this repository so they can be replaced with template repository files."
-	RemoveAllRepositoryFilesExceptTemplateModuleFiles -repositoryDirectoryPath $RepositoryDirectoryPath
+	RemoveAllUnnecessaryRepositoryFiles -repositoryDirectoryPath $RepositoryDirectoryPath
 
 	Write-Information "Creating the template repository files."
-	Import-Module -Name $TemplateModuleDirectoryPath -Force
+	Import-Module -Name $tempModuleDirectoryPath -Force
 	New-PowerShellScriptModuleRepository -RepositoryDirectoryPath $RepositoryDirectoryPath -ModuleName $moduleName -OrganizationName $organizationName
-	Remove-Module -Name ScriptModuleRepositoryTemplate -Force
+	Remove-Module -Name $TemplateModuleName -Force
 
-	Write-Information "Removing the template module files since we are done using it to create the template repository files."
-	RemoveTemplateModuleFiles -templateModuleDirectoryPath $TemplateModuleDirectoryPath
+	Write-Information "Removing the temporary template module files since we are done using it to create the template repository files."
+	RemoveTemporaryModuleDirectory -tempModuleDirectoryPath $tempModuleDirectoryPath
 
 	Write-Host -ForegroundColor Green "Repo initialization complete. You can now commit the changes to your repository."
 }
@@ -32,16 +35,24 @@ Begin
 {
 	$InformationPreference = 'Continue'
 	[string] $RepositoryDirectoryPath = Resolve-Path -Path $PSScriptRoot
-	[string] $TemplateModuleDirectoryPath = "$RepositoryDirectoryPath\src\ScriptModuleRepositoryTemplate"
+	[string] $TemplateModuleName = 'ScriptModuleRepositoryTemplate'
+	[string] $TemplateModuleDirectoryPath = "$RepositoryDirectoryPath\src\$TemplateModuleName"
 
-	function RemoveAllRepositoryFilesExceptTemplateModuleFiles([string] $repositoryDirectoryPath)
+	function CopyTemplateModuleFilesToTempDirectory([string] $templateModuleDirectoryPath)
+	{
+		[string] $templateModuleName = Split-Path -Path $templateModuleDirectoryPath -Leaf
+		[string] $tempModuleDirectoryPath = [System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), (New-Guid).Guid, $templateModuleName)
+		Copy-Item -Path $templateModuleDirectoryPath -Destination $tempModuleDirectoryPath -Recurse -Force
+		return $tempModuleDirectoryPath
+	}
+
+	function RemoveAllUnnecessaryRepositoryFiles([string] $repositoryDirectoryPath)
 	{
 		# Delete all files except the ones we want to keep.
 		Get-ChildItem -Path $repositoryDirectoryPath -Recurse -File |
 			Where-Object {
 				$_.FullName -notlike "$repositoryDirectoryPath\.git\*" -and # Don't delete the .git directory.
-				$_.FullName -notlike "$repositoryDirectoryPath\_InitializeRepository.ps1" -and # Don't delete this script.
-				$_.FullName -notlike "$TemplateModuleDirectoryPath\*" # Don't delete the template module files.
+				$_.FullName -notlike "$repositoryDirectoryPath\_InitializeRepository.ps1" # Don't delete this script.
 			} |
 			Remove-Item -Force
 
@@ -52,11 +63,11 @@ Begin
 			Remove-Item -Force
 	}
 
-	function RemoveTemplateModuleFiles([string] $templateModuleDirectoryPath)
+	function RemoveTemporaryModuleDirectory([string] $tempModuleDirectoryPath)
 	{
-		if (Test-Path -Path $templateModuleDirectoryPath -PathType Container)
+		if (Test-Path -Path $tempModuleDirectoryPath -PathType Container)
 		{
-			Remove-Item -Path $templateModuleDirectoryPath -Recurse -Force
+			Remove-Item -Path $tempModuleDirectoryPath -Recurse -Force -ErrorAction SilentlyContinue
 		}
 	}
 }
