@@ -130,7 +130,7 @@ The following boilerplate git repository files should be reviewed and updated or
 > [!IMPORTANT]
 > If you've made it this far, your repository is now ready for use! 🎉
 >
-> You may delete and all of this file's content above this message and commit any changes you've made.
+> You may delete this message and all of the file's content above it and commit any changes you've made.
 
 # __NewModuleName__ PowerShell Module
 
