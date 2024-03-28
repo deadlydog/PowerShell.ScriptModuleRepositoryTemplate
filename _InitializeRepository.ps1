@@ -28,6 +28,9 @@ If you have made changes to any files you may want to commit them before continu
 	Write-Information "Removing the temporary template module files since we are done using it to create the template repository files."
 	RemoveTemporaryModuleDirectory -tempModuleDirectoryPath $tempModuleDirectoryPath
 
+	Write-Information "Starting external process to delete this script."
+	DeleteThisScript
+
 	Write-Host -ForegroundColor Green "Repo initialization complete. You can now commit the changes to your repository."
 }
 
@@ -68,6 +71,22 @@ Begin
 		if (Test-Path -Path $tempModuleDirectoryPath -PathType Container)
 		{
 			Remove-Item -Path $tempModuleDirectoryPath -Recurse -Force -ErrorAction SilentlyContinue
+		}
+	}
+
+	function DeleteThisScript
+	{
+		[string] $scriptPath = $MyInvocation.MyCommand.Path
+		[string] $deleteCommand = "-ExecutionPolicy Bypass -NoProfile -Command `"Start-Sleep -Seconds 1; Remove-Item -Path $scriptPath -Force`""
+
+		$powerShellVersion = $PSVersionTable.PSVersion.Major
+		if ($powerShellVersion -le 5)
+		{
+			Invoke-Expression -Command "powershell $deleteCommand"
+		}
+		else
+		{
+			Invoke-Expression -Command "pwsh $deleteCommand"
 		}
 	}
 }
