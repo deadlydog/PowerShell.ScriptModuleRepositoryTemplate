@@ -27,7 +27,7 @@
   Description = 'Create new PowerShell script module repositories quickly and easily with boilerplate files and CI/CD workflows already defined.'
 
   # Minimum version of the PowerShell engine required by this module
-  PowerShellVersion = '3.0'
+  # PowerShellVersion = ''
 
   # Name of the PowerShell host required by this module
   # PowerShellHostName = ''
