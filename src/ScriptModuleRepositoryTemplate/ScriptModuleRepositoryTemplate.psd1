@@ -9,7 +9,7 @@
   ModuleVersion = '0.0.0'
 
   # Supported PSEditions
-  # CompatiblePSEditions = @('Desktop', 'Core')
+  # CompatiblePSEditions = @()
 
   # ID used to uniquely identify this module
   GUID = '643e6cf9-a844-4a1e-9771-643226c06943'
@@ -31,7 +31,7 @@ Checkout the template repository at https://github.com/deadlydog/PowerShell.Scri
 '@
 
   # Minimum version of the PowerShell engine required by this module
-  # PowerShellVersion = ''
+  PowerShellVersion = '3.0'
 
   # Name of the PowerShell host required by this module
   # PowerShellHostName = ''
