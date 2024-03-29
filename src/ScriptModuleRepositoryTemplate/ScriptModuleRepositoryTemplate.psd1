@@ -105,6 +105,9 @@
         'Pipelines'
         'CICD'
         'Deploy'
+        'Windows'
+        'MacOS'
+        'Linux'
       )
 
       # A URL to the license for this module.
