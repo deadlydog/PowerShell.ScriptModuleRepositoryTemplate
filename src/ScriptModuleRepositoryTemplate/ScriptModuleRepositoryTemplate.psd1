@@ -24,11 +24,7 @@
   Copyright = '(c) Daniel Schroeder. All rights reserved.'
 
   # Description of the functionality provided by this module
-  Description = @'
-This module does nothing, but is part of a template git repository that you can clone to create new PowerShell script modules quickly and easily with boilerplate files and CI/CD workflows already defined.
-
-Checkout the template repository at https://github.com/deadlydog/PowerShell.ScriptModuleRepositoryTemplate.
-'@
+  Description = 'Create new PowerShell script module repositories quickly and easily with boilerplate files and CI/CD workflows already defined.'
 
   # Minimum version of the PowerShell engine required by this module
   PowerShellVersion = '3.0'
