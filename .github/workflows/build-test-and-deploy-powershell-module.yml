@@ -48,7 +48,7 @@ jobs:
           Test-ModuleManifest -Path $moduleManifestFilePath
 
           Write-Output "Publishing the prerelease version of the module."
-          Install-Module -Name PSResourceGet -Scope CurrentUser -Repository PSGallery -Force
+          Install-Module -Name Microsoft.PowerShell.PSResourceGet -Scope CurrentUser -Repository PSGallery -Force
           Publish-PSResource -Path $moduleDirectoryPath -ApiKey '${{ secrets.POWERSHELL_GALLERY_API_KEY }}' -Repository PSGallery -Verbose
 
       - name: Wait a short while for the module to be available on the PowerShell Gallery before continuing
