@@ -10,16 +10,20 @@
 		"hashtable"
 	],
 	"ignoreWords": [
+		"chsh", // Change shell
 		"CICD", // Continuous Integration/Continuous Deployment
 		"CODEOWNERS", // GitHub CODEOWNERS
 		"Codespace", // GitHub Codespaces
 		"Codespaces", // GitHub Codespaces
 		"devcontainer", // VS Code devcontainer
+		"devcontainers", // VS Code devcontainers
 		"gittools", // GitHub action author
 		"Hmmss", // Time format
 		"jacoco", // Java code coverage
+		"Leonhardt", // GitHub action author
 		"madrapps", // GitHub action author
 		"nunit", // .NET unit testing framework
-		"pwsh" // PowerShell Core
+		"pwsh", // PowerShell Core
+		"yzhang" // GitHub action author
 	]
 }
