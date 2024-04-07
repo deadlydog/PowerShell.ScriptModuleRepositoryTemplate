@@ -71,6 +71,16 @@ function CopyTemplateFilesToRepositoryRoot([string] $repositoryDirectoryPath)
 		Write-Verbose "Copying the template repository files from '$templateModuleDirectoryPath' to the repository directory '$repositoryDirectoryPath'."
 		Copy-Item -Path $templateModuleDirectoryPath\* -Destination $repositoryDirectoryPath -Recurse -Force
 	}
+
+	# Rename all dot-files prefixed with an underscore to remove the underscore.
+	# The underscore prefix is a workaround to a bug with Publish-Module and Publish-PSResource the excludes dot-files
+	# and dot-directories from being included in the module package.
+	$repoDotFiles = Get-ChildItem -Path $repositoryDirectoryPath -Recurse -Force -Filter '_.*'
+	$repoDotFiles | ForEach-Object {
+		[string] $filePath = $_.FullName
+		[string] $newFileName = $_.Name -replace '^_\.', '.'
+		Rename-Item -Path $filePath -NewName $newFileName -Force
+	}
 }
 
 function SetModuleFileNames([string] $repositoryDirectoryPath, [string] $moduleName)

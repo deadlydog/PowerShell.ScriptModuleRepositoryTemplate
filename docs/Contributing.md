@@ -23,6 +23,12 @@ If you want to increment the Major or Minor version number, you have 2 options:
    Builds are not triggered on tags, and thus the version tag will be used as the starting point for the next version.
    e.g. Creating a new tag of `v2.4.0` will produce a new version of `2.4.1` on the next commit to the `main` branch.
 
+## Why are the template dot-files filenames prefixed with an underscore?
+
+`Publish-Module` has a bug where it does not include any files or directories starting with `.` in the module NuGet package.
+The newer `Publish-PSResource` has fixed this issue somewhat so the directories and some of the files are included, but it still leaves out some dot-files, like the `.gitignore` and `.editorconfig` files.
+To work around these issues, we prefix the files with an underscore (e.g. `_.gitignore`) so that they are included in the module package, and then remove the underscore prefix during the file copy process of the `New-PowerShellScriptModuleRepository` cmdlet.
+
 ## ⁉ Why was a specific decision made
 
 Curious about some of the choices made in this project?
