@@ -29,7 +29,7 @@ Describe 'New-PowerShellScriptModuleRepository' {
 		$expectedModuleTestsFilePath | Should -Exist
 	}
 
-	It 'Should replace all dot-files and directories prefixed with an underscore to remove the underscore' {
+	It 'Should replace all dot-files and dot-directories prefixed with an underscore to remove the underscore' {
 		# Arrange.
 		$repositoryDirectoryPath = $TemporaryRepoPath
 		$moduleName = 'NewModule'
