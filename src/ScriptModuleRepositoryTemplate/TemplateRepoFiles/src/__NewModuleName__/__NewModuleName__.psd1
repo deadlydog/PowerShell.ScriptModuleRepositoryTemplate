@@ -24,7 +24,7 @@
   Copyright = '(c) __IndividualOrOrganizationName__. All rights reserved.'
 
   # Description of the functionality provided by this module
-  # Description = ''
+  Description = '__NewModuleName__ module.'
 
   # Minimum version of the PowerShell engine required by this module
   # PowerShellVersion = ''
