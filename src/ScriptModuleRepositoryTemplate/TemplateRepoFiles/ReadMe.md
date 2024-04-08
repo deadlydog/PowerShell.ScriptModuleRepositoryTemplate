@@ -137,6 +137,7 @@ The following boilerplate git repository files should be reviewed and updated or
 ## 💬 Description
 
 A short description of what this project does.
+Include a link to the module in the gallery.
 
 ## ❓ Why this exists
 
