@@ -22,6 +22,7 @@
 		"jacoco", // Java code coverage
 		"Leonhardt", // GitHub action author
 		"madrapps", // GitHub action author
+		"nupkg", // NuGet package
 		"nunit", // .NET unit testing framework
 		"pwsh", // PowerShell Core
 		"yzhang" // GitHub action author
