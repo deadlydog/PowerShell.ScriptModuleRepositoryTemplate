@@ -78,8 +78,10 @@ function CopyTemplateFilesToRepositoryRoot([string] $repositoryDirectoryPath)
 	$repoDotFiles = Get-ChildItem -Path $repositoryDirectoryPath -Recurse -Force -Filter '_.*'
 	$repoDotFiles | ForEach-Object {
 		[string] $filePath = $_.FullName
+		[string] $parentDirectory = Split-Path -Path $filePath -Parent
 		[string] $newFileName = $_.Name -replace '^_\.', '.'
-		Rename-Item -Path $filePath -NewName $newFileName -Force
+		[string] $newFilePath = Join-Path -Path $parentDirectory -ChildPath $newFileName
+		Move-Item -Path $filePath -Destination $newFilePath -Force
 	}
 }
 
