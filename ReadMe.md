@@ -22,13 +22,13 @@
 
 # PowerShell Script Module Repository Template
 
-A template repository and module for creating new PowerShell module repos quickly with boilerplate files and CI/CD workflows already defined.
+A template repository and module for creating new PowerShell script module repos quickly with boilerplate files and CI/CD workflows already defined.
 
 ## ✨ Features
 
 Use this repo template or module for your new git repository to get the following features out-of-the-box:
 
-- GitHub Actions workflows or Azure DevOps Pipelines YAML files that:
+- GitHub Actions workflows (Azure DevOps Pipelines YAML support coming soon) that:
   - Publish a prerelease version on every commit to the `main` branch, and a stable version once manually approved.
     - Can also manually trigger deployments of feature branches.
   - Version the module.
@@ -40,6 +40,8 @@ Use this repo template or module for your new git repository to get the followin
 - Visual Studio Code tasks to easily run Pester tests and PSScriptAnalyzer locally.
 - A `.devcontainer` for use with Visual Studio Code's [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and [GitHub Codespaces](https://github.com/features/codespaces).
 - Boilerplate repository files, such as ReadMe, License, Changelog, .gitignore, .editorconfig, PR and Issue templates, and more.
+
+This template/module does not require any additional modules or dependencies to be installed on your machine, or force you to learn a new build framework or language.
 
 ## 🚀 Get started
 
@@ -128,14 +130,10 @@ Buy me a hot apple cider for providing this template open source and for free �
 
 Things to still do:
 
+- Add support for Azure DevOps.
 - Allow user to create single .psm1 file or Public/Private directory structure for separate files per function.
 - Allow using a custom PowerShell Gallery feed URL.
-- Create new deployment on tag creation maybe.
-- Prompt user for module name, org name, pipelines or actions, PowerShell gallery or custom feed with an option to leave it blank to fill it in later.
 - Make azure DevOps and GitHub steps in the ReadMe collapsible.
-  Have screenshots and link to recording of the setup in both, since they involve clicking around in the UI.
-  Perhaps link to [this tutorial](https://dev.to/olalekan_oladiran_d74b7a6/how-to-enable-continuous-integration-with-azure-pipelines-1doi)?
-- In the ReadMe setup instructions or above, have a sentence or two explaining the layout of the ReadMe, or maybe a table of contents
-- To prevent having to store CI/CD manual setup images in the repo, maybe have them as an external link to a GitHub branch.
-  - Also create videos showing how to do the setup.
-- Maybe show instructions for setting up GitHub / Azure DevOps CI/CD during the initialization script. Or mention to follow the ReadMe instructions.
+  Have screenshots and links to a recording of the setup in both, since they involve clicking around in the UI.
+  Perhaps link to [this tutorial for Azure DevOps](https://dev.to/olalekan_oladiran_d74b7a6/how-to-enable-continuous-integration-with-azure-pipelines-1doi)?
+- Maybe support new deployments on tag creation.
