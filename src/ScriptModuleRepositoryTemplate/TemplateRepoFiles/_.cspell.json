@@ -6,8 +6,8 @@
 	"version": "0.2",
 	"language": "en",
 	"ignorePaths": [
-		".gitattributes",
-		".gitignore"
+		"**/.gitattributes",
+		"**/.gitignore"
 	],
 	"words": [
 		"hashtable"
