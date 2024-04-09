@@ -10,7 +10,12 @@
 		"**/_.gitignore"
 	],
 	"words": [
-		"hashtable"
+		"behaviour",
+		"gif",
+		"hashtable",
+		"remoting",
+		"runspace",
+		"runspaces"
 	],
 	"ignoreWords": [
 		"chsh", // Change shell
