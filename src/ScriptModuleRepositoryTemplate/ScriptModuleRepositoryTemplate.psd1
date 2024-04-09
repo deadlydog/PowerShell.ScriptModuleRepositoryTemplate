@@ -24,7 +24,7 @@
   Copyright = '(c) Daniel Schroeder. All rights reserved.'
 
   # Description of the functionality provided by this module
-  Description = 'Create new PowerShell script module repositories quickly and easily with boilerplate files and CI/CD workflows already defined.'
+  Description = 'Create new PowerShell script module repositories quickly and easily with boilerplate files and CI/CD workflows already defined. See the project site for more information.'
 
   # Minimum version of the PowerShell engine required by this module
   # PowerShellVersion = ''
