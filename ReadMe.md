@@ -128,6 +128,7 @@ Buy me a hot apple cider for providing this template open source and for free ðŸ
 
 Things to still do:
 
+- Allow user to create single .psm1 file or Public/Private directory structure for separate files per function.
 - Allow using a custom PowerShell Gallery feed URL.
 - Create new deployment on tag creation maybe.
 - Prompt user for module name, org name, pipelines or actions, PowerShell gallery or custom feed with an option to leave it blank to fill it in later.
