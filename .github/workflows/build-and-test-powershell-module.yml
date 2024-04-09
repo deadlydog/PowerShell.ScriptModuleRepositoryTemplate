@@ -48,6 +48,8 @@ env:
 jobs:
   build-and-test:
     runs-on: windows-latest # Use Windows agent to ensure dotnet.exe is available to build C# assemblies, if required.
+    permissions:
+      contents: write # Allow writing the version number to a git tag.
     outputs:
       powerShellModuleName: ${{ env.powerShellModuleName }}
       stableVersionNumber: ${{ steps.version-number.outputs.majorMinorPatch }}
