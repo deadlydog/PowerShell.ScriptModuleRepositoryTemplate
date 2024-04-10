@@ -7,7 +7,9 @@
 	"language": "en",
 	"ignorePaths": [
 		"**/_.gitattributes",
-		"**/_.gitignore"
+		"**/_.gitignore",
+		"**/build-and-test-powershell-module.yml",
+		"**/build-test-and-deploy-powershell-module.yml"
 	],
 	"words": [
 		"behaviour",
