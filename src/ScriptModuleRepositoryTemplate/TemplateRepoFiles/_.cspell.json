@@ -6,8 +6,8 @@
 	"version": "0.2",
 	"language": "en",
 	"ignorePaths": [
-		"**/build-and-test-powershell-module.yml",
-		"**/build-test-and-deploy-powershell-module.yml"
+		".devcontainer/devcontainer.json",
+		".github/workflows/*.yml"
 	],
 	"words": [
 		"behaviour",

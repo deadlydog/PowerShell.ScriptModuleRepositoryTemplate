@@ -8,6 +8,7 @@
 	"ignorePaths": [
 		"**/_.gitattributes",
 		"**/_.gitignore",
+		"**/devcontainer.json",
 		"**/build-and-test-powershell-module.yml",
 		"**/build-test-and-deploy-powershell-module.yml"
 	],
