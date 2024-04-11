@@ -73,7 +73,7 @@ function CopyTemplateFilesToRepositoryRoot([string] $repositoryDirectoryPath)
 	}
 
 	# Rename all dot-files prefixed with an underscore to remove the underscore.
-	# The underscore prefix is a workaround to a bug with Publish-Module and Publish-PSResource the excludes dot-files
+	# The underscore prefix is a workaround to a bug with Publish-Module and Publish-PSResource that exclude dot-files
 	# and dot-directories from being included in the module package.
 	$repoDotFiles = Get-ChildItem -Path $repositoryDirectoryPath -Recurse -Force -Filter '_.*'
 	$repoDotFiles | ForEach-Object {
