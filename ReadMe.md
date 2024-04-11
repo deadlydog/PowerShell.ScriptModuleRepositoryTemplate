@@ -133,7 +133,7 @@ Things to still do:
 - Add support for Azure DevOps.
 - Allow user to create single .psm1 file or Public/Private directory structure for separate files per function.
 - Allow using a custom PowerShell Gallery feed URL.
-- Make azure DevOps and GitHub steps in the ReadMe collapsible.
-  Have screenshots and links to a recording of the setup in both, since they involve clicking around in the UI.
+- Have screenshots and/or recordings of manual steps to setup GitHub and Azure DevOps, since they involve clicking around in the UI.
   Perhaps link to [this tutorial for Azure DevOps](https://dev.to/olalekan_oladiran_d74b7a6/how-to-enable-continuous-integration-with-azure-pipelines-1doi)?
+  - Perhaps we can automate this to avoid the manual steps altogether?
 - Maybe support new deployments on tag creation.
