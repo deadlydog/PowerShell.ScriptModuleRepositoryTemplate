@@ -2,6 +2,7 @@
 # These tests run against the installed module, not the source code, so they are a real-world test and should not use mocks.
 # Since mocks are not used, be careful to not rely on state stored on the machine, such as a module configuration file.
 # This is a great place to put tests that differ between operating systems, since they will be ran on multiple platforms.
+# Keep in mind that these tests can only call the public functions in the module, not the private functions.
 # To run these tests on your local machine, see the comments in the BeforeAll block.
 
 BeforeAll {

@@ -21,6 +21,11 @@ If you already have the module, manifest, and tests written, replace the followi
 
 Otherwise, use these files as a starting point for your new module.
 
+#### Smoke tests
+
+When you change the module and tests, you will also need to update [the Smoke tests](/deploy/Invoke-SmokeTests.ps1), otherwise they may fail the CI/CD workflow.
+See the [Contributing docs](/docs/Contributing.md) for more information on smoke tests.
+
 ### 🚀 Step 4: Update your CI/CD workflows
 
 #### 🔑 Create a PowerShell Gallery API Key
