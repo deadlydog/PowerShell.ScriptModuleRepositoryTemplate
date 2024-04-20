@@ -8,6 +8,10 @@ Features:
 
 - Run Pester tests during the build on Windows PowerShell too, to catch backward-incompatible changes earlier.
 
+Fixes:
+
+- Use backslash instead of forward-slash to import module in Pester tests for Windows PowerShell backward compatibility.
+
 ## v1.0.0 - April 13, 2024
 
 Features:
