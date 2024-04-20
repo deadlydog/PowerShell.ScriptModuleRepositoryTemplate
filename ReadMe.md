@@ -31,8 +31,9 @@ Use this repo template or module for your new git repository to get the followin
     - Can also manually trigger deployments of feature branches.
   - Version the module.
   - Run PSScriptAnalyzer to ensure best practices are followed.
-  - Run build tests, and smoke tests on multiple platforms (Windows, Linux, MacOS).
-  - Publish the module to the PowerShell Gallery or a custom feed.
+  - Run build tests with Pwsh and PowerShell to ensure backward compatibility.
+  - Run smoke tests on multiple platforms (Windows, Linux, MacOS) to ensure the module works as expected after being installed on all platforms.
+  - Publish the module to the PowerShell Gallery (custom feed support coming soon).
   - Spell check all files in the repository.
   - Display test code coverage results on PRs.
 - Visual Studio Code tasks to easily run Pester tests and PSScriptAnalyzer locally.
