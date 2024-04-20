@@ -123,7 +123,7 @@ If you want to be able to create new repositories from a module, you will need t
 
 See what's changed in the template and module over time by viewing [the changelog](Changelog.md).
 
-## ❤ Donate to support this template (optional)
+## ❤ Donate to support this template
 
 Buy me a hot apple cider for providing this template open source and for free 🙂
 
