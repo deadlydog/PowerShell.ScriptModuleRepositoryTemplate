@@ -47,7 +47,7 @@ env:
 
 jobs:
   build-and-test:
-    runs-on: windows-latest # Use Windows agent to ensure dotnet.exe is available to build C# assemblies, if required.
+    runs-on: windows-latest # Use Windows agent so we can run Pester tests on Windows PowerShell 5.1 as well.
     outputs:
       powerShellModuleName: ${{ env.powerShellModuleName }}
       stableVersionNumber: ${{ steps.version-number.outputs.majorMinorPatch }}
@@ -108,6 +108,25 @@ jobs:
         shell: pwsh
         run: Invoke-ScriptAnalyzer -Path . -Recurse -EnableExit
 
+      - name: Run Pester tests on Windows PowerShell to ensure backward compatibility
+        shell: powershell
+        run: |
+          Write-Output "Pester version being used:"
+          Import-Module -Name Pester
+          Get-Module -Name Pester
+
+          Write-Output "Running all Pester tests in the repo:"
+          $pesterConfig = New-PesterConfiguration @{
+            Output = @{ Verbosity = 'Detailed' }
+            Run = @{ Throw = $true }
+            TestResult = @{
+              Enabled = $true
+              OutputPath = 'test-results-windows-powershell-nunit.xml'
+            }
+            CodeCoverage = @{ Enabled = $false }
+          }
+          Invoke-Pester -Configuration $pesterConfig
+
       - name: Run Pester tests and generate code coverage report
         shell: pwsh
         run: |
@@ -121,7 +140,7 @@ jobs:
             Run = @{ Throw = $true }
             TestResult = @{
               Enabled = $true
-              OutputPath = 'test-results-nunit.xml'
+              OutputPath = 'test-results-pwsh-nunit.xml'
             }
             CodeCoverage = @{
               Enabled = $true

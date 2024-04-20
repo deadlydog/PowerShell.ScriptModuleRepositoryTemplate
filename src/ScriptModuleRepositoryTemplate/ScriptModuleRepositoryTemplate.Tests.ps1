@@ -1,4 +1,4 @@
-using module './ScriptModuleRepositoryTemplate.psm1'
+using module '.\ScriptModuleRepositoryTemplate.psm1'
 
 Describe 'New-PowerShellScriptModuleRepository' {
 	BeforeEach {
