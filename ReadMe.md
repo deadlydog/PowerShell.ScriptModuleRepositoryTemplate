@@ -121,11 +121,11 @@ If you want to be able to create new repositories from a module, you will need t
 
 ## ⏪ Changelog
 
-See what's changed in the template and module over time by viewing [the changelog](Changelog.md).
+See what's changed in the module and template over time by viewing [the changelog](Changelog.md).
 
-## ❤ Donate to support this template
+## ❤ Donate to support this module and template
 
-Buy me a hot apple cider for providing this template open source and for free 🙂
+Buy me a hot apple cider for providing this module and template open source and for free 🙂
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5MWSTSXNYEJWW)
 
