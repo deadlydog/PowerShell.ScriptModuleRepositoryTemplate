@@ -42,6 +42,8 @@ Use this repo template or module for your new git repository to get the followin
 
 This template/module does not require any additional modules or dependencies to be installed on your machine, or force you to learn a new build framework or language.
 
+I plan on creating a dedicated video tutorial for this module and template, but until then you can [watch the demo portion of this presentation](https://www.youtube.com/watch?v=oM_2sOE9Y6g&t=1420s) that shows setting it up and using it, and talks about some of the benefits it provides.
+
 ## 🚀 Get started
 
 There are two ways to create your new PowerShell module repository:
