@@ -124,6 +124,7 @@ function SetTemplateTokenValuesInAllRepositoryFiles([string] $repositoryDirector
 		$contents = $contents -replace '__NewModuleName__', $moduleName
 		$contents = $contents -replace '__IndividualOrOrganizationName__', $organizationName
 		$contents = $contents -replace '__NewModuleGuid__', (New-Guid).ToString()
+		$contents = $contents -replace '__CurrentYear__', (Get-Date).Year
 		Set-Content -Path $filePath -Value $contents
 	}
 }
