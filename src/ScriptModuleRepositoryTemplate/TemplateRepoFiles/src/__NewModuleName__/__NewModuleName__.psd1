@@ -108,6 +108,7 @@
       # IconUri = ''
 
       # ReleaseNotes of this module
+      # TODO: Add a link to the Changelog.md page in the git repository and delete this TODO comment.
       # ReleaseNotes = ''
 
       # Prerelease string of this module
