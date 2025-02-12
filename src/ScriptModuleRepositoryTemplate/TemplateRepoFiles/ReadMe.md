@@ -123,6 +123,7 @@ Coming soon.
 The following boilerplate git repository files should be reviewed and updated or removed as needed.
 
 - [__NewModuleName__.psd1](/src/__NewModuleName__/__NewModuleName__.psd1): Update the module manifest with your module's information, such as the Description and have the ProjectUri link to this repository, etc.
+  - If using the default generated manifest, search for "TODO" to find the properties that are recommended to update.
 - [Changelog](/Changelog.md): If you don't plan to track a changelog, remove this file and it's reference from the ReadMe.
 - [License](/License.md): Update to match your module's license, and ensure it uses the correct name and year in the copyright.
 - [Contributing](/docs/Contributing.md): Update to match your module's contributing guidelines, or remove it.

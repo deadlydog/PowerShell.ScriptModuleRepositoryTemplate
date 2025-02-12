@@ -5,7 +5,7 @@
   # Script module or binary module file associated with this manifest.
   RootModule = '__NewModuleName__.psm1'
 
-  # Version number of this module.
+  # Version number of this module. This will be updated automatically by the build and deployment pipelines.
   ModuleVersion = '0.0.0'
 
   # Supported PSEditions
@@ -24,6 +24,7 @@
   Copyright = '(c) __IndividualOrOrganizationName__. All rights reserved.'
 
   # Description of the functionality provided by this module
+  # TODO: Update the description and delete this TODO comment.
   Description = '__NewModuleName__ module.'
 
   # Minimum version of the PowerShell engine required by this module
@@ -62,7 +63,8 @@
   # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
   # NestedModules = @()
 
-  # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
+  # Functions to export from this module. For best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
+  # TODO: Update the functions list and delete this TODO comment.
   FunctionsToExport = @(
     'Get-HelloWorld'
   )
@@ -91,12 +93,15 @@
     PSData = @{
 
       # Tags applied to this module. These help with module discovery in online galleries.
+      # TODO: Add appropriate module tags and delete this TODO comment.
       # Tags = @()
 
       # A URL to the license for this module.
+      # TODO: Add a link to the module license and delete this TODO comment.
       # LicenseUri = ''
 
       # A URL to the main website for this project.
+      # TODO: Add a link to your git repository or website and delete this TODO comment.
       # ProjectUri = ''
 
       # A URL to an icon representing this module.
