@@ -92,7 +92,7 @@ Next we want to create an Environment so that stable module versions require man
    e.g. your GitHub username.
 1. Click the `Save protection rules` button.
 
-If your GitHub account does not meet [the requirements to use `Environments`](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment), the `Environments` section will not be available.
+If your GitHub account does not meet [the requirements to use `Environments`](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment), the `Environments` section or `Required reviewers` options may not be available.
 Deployments will still work, but they will not pause for manual approval and will automatically deploy the stable version directly after the prerelease version is published.
 You will instead need to add [the Manual Workflow Approval action](https://github.com/marketplace/actions/manual-workflow-approval) to [the deployment workflow](/.github/workflows/build-test-and-deploy-powershell-module.yml) to block deployments until they are approved.
 
