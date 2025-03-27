@@ -7,7 +7,8 @@
 	"language": "en",
 	"ignorePaths": [
 		".devcontainer/devcontainer.json",
-		".github/workflows/*.yml"
+		".github/workflows/*.yml",
+		".gitignore"
 	],
 	"words": [
 		"behaviour",
