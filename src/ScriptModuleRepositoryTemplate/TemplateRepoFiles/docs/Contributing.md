@@ -15,6 +15,9 @@ The code is built and tested by CI/CD pipelines on every commit to the `main` br
 When developing locally, you can use [the VS Code tasks](/.vscode/tasks.json) to simulate the build and test process and be notified of any problems before pushing your code up to the remote repository.
 In VS Code, open the command palette (Ctrl+Shift+P) and select `Tasks: Run Build Task` or `Tasks: Run Test Task`.
 
+When you run the build task, it will run PSScriptAnalyzer and CSpell spellcheck.
+If CSpell flags a word as `unknown` that is not misspelled, you can add it to the `.cspell.json` file in the root of the repository to have it ignore the word.
+
 ## 🚀 Publishing new versions
 
 A prerelease version of the module is published automatically on every commit to the `main` branch.
