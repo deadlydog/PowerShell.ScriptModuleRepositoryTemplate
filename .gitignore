@@ -1,3 +1,9 @@
+# Custom additions:
+
+# Ignore NPM files.
+package-lock.json
+package.json
+
 # Created by https://www.toptal.com/developers/gitignore/api/powershell,visualstudiocode,visualstudio
 # Edit at https://www.toptal.com/developers/gitignore?templates=powershell,visualstudiocode,visualstudio
 

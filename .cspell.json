@@ -10,7 +10,10 @@
 		"**/_.gitignore",
 		"**/devcontainer.json",
 		"**/build-and-test-powershell-module.yml",
-		"**/build-test-and-deploy-powershell-module.yml"
+		"**/build-test-and-deploy-powershell-module.yml",
+		"**/bin/**", // Ignore C# build output files.
+		"**/obj/**", // Ignore C# build output files.
+		".gitignore"
 	],
 	"words": [
 		"behaviour",
