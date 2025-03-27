@@ -2,6 +2,19 @@
 
 Feel free to open an issue or pull request.
 
+## Local development
+
+This PowerShell module is developed using Visual Studio Code.
+If you encounter any issues developing on your local machine, you can use [Docker Desktop](https://www.docker.com/products/docker-desktop/) and the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) VS Code extension to develop in a Docker container with all of the required dependencies, so that you do not have to install them locally.
+You may also develop in your web browser with GitHub Codespaces to avoid needing to put any code or dependencies on your local machine.
+
+### Building and testing
+
+The code is built and tested by CI/CD pipelines on every commit to the `main` branch and every PR opened against the `main` branch.
+
+When developing locally, you can use [the VS Code tasks](/.vscode/tasks.json) to simulate the build and test process and be notified of any problems before pushing your code up to the remote repository.
+In VS Code, open the command palette (Ctrl+Shift+P) and select `Tasks: Run Build Task` or `Tasks: Run Test Task`.
+
 ## 🚀 Publishing new versions
 
 A prerelease version of the module is published automatically on every commit to the `main` branch.
