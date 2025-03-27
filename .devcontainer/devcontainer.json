@@ -10,7 +10,8 @@
 			"username": "vscode",
 			"upgradePackages": "false",
 			"nonFreePackages": "true"
-		}
+		} //, // Uncomment this line and the one below to install the dotnet CLI.
+		//"ghcr.io/devcontainers/features/dotnet:2": "latest" // Installs the dotnet CLI.
 	},
 
 	// Set pwsh as the default shell for the devcontainer, install required PowerShell modules, and install NPM and CSpell.
