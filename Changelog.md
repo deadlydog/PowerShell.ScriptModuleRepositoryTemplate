@@ -2,6 +2,14 @@
 
 This page is a list of _notable_ changes made in each version.
 
+## v1.2.0 - March 27, 2025
+
+Features:
+
+- Add VS Code task to run CSpell spellcheck when building, as well as a stand-alone VS Code task.
+- Update dev container to the latest PowerShell image and have it install PSScriptAnalyzer, Pester, and CSpell.
+- Update default Contributing.md to include information around local development and building.
+
 ## v1.1.0 - April 20, 2024
 
 Features:
