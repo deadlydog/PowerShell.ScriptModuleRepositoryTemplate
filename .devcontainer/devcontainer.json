@@ -3,14 +3,14 @@
 {
 	"name": "PowerShell",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/dotnet/sdk:9.0",
+	"image": "mcr.microsoft.com/dotnet/sdk:10.0",
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"installZsh": "true",
 			"username": "vscode",
 			"upgradePackages": "false",
 			"nonFreePackages": "true"
-		} //, // Uncomment this line and the one below to install the dotnet CLI.
+		}//, // Uncomment this line and the one below to install the dotnet CLI.
 		//"ghcr.io/devcontainers/features/dotnet:2": "latest" // Installs the dotnet CLI.
 	},
 
