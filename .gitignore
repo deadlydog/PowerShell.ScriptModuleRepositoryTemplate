@@ -1,11 +1,11 @@
-# Custom additions:
+### Custom additions ###
 
-# Ignore NPM files.
-package-lock.json
+# Ignore Node/NPM files created running CSpell task.
 package.json
+package-lock.json
 
-# Created by https://www.toptal.com/developers/gitignore/api/powershell,visualstudiocode,visualstudio
-# Edit at https://www.toptal.com/developers/gitignore?templates=powershell,visualstudiocode,visualstudio
+# Created by https://www.toptal.com/developers/gitignore/api/powershell,visualstudio,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=powershell,visualstudio,visualstudiocode
 
 ### PowerShell ###
 # Exclude packaged modules
@@ -428,4 +428,4 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/powershell,visualstudiocode,visualstudio
+# End of https://www.toptal.com/developers/gitignore/api/powershell,visualstudio,visualstudiocode
